@@ -63,19 +63,19 @@
 							<div class="panel-body">
 								<div id="rootwizard">
 
-									<form class="form-horizontal" role="form">
+									<form class="form-horizontal" method="post" id="upload_data" role="form">
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-2 control-label">Title on Banner</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputEmail3"
+												<input type="text" class="form-control" id="banner_title" name="banner_title"
 													placeholder="Name">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-2 control-label">Image</label>
 											<div class="col-md-10">
-												<input type="file" class="btn btn-default" id="exampleInputFile1">
-												<p class="help-block">
+												<input type="file" class="btn btn-default" name="banner_image" id="banner_image">
+												<p class="help-block" id="upload_res">
 													URl
 												</p>
 											</div>
@@ -84,7 +84,7 @@
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
 												<div class="checkbox">
-													<label> <input type="checkbox"> Visible
+													<label> <input type="checkbox" name="ban_show"> Visible
 													</label>
 												</div>
 												
@@ -107,13 +107,13 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Person</th>
-								<th>Designation</th>
-								<th>Testimonial</th>
+								<th>Title</th>
+								<th>Image Url</th>
+								<th>Image</th>
 								<th>Edit</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="table_data">
 							
 							
 						</tbody>
@@ -135,7 +135,7 @@
 
 		</div>
 	</footer>
-
+	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<!-- jQuery UI -->
@@ -176,5 +176,7 @@
 
     
     <script src="js/tables.js"></script>
+    <!-- Custom Script -->
+    <script type="text/javascript" src="js/banner_man.js"></script>
 </body>
 </html>

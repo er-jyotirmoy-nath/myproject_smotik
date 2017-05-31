@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bootstrap Admin Theme v3</title>
+<title>Smotik Admin Panel-Clints Edit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- jQuery UI -->
 <link
