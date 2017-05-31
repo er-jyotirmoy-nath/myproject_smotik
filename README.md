@@ -1,1 +1,1 @@
-"# Project Smotik" 
+# Project Smotik
