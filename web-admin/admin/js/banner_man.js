@@ -1,5 +1,9 @@
 $("#upload_data").on('submit', (function (e) {
     e.preventDefault();
+    if($("#banner_image").val() == "" || $("#banner_title").val()==""){
+    	alert("Please select a banner and set the title");
+    	return false;
+    }
     $.ajax({
         url: "banner_man_class.php",
         type: "POST",

@@ -63,11 +63,11 @@
 							<div class="panel-body">
 								<div id="rootwizard">
 
-									<form class="form-horizontal" role="form">
+									<form class="form-horizontal" role="form" name="testimonial_frm" id="testimonial_frm">
 										<div class="form-group">
 											<label for="inputEmail3" class="col-sm-2 control-label">Person Name</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputEmail3"
+												<input type="text" class="form-control" id="pname" name="pname"
 													placeholder="Name">
 											</div>
 										</div>
@@ -75,21 +75,21 @@
 											<label for="inputPassword3" class="col-sm-2 control-label">Designation</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control"
-													id="inputPassword3" placeholder="Designation">
+													id="pdesignation" name="pdesignation" placeholder="Designation">
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 control-label">Testimonial</label>
 											<div class="col-sm-10">
 												<textarea class="form-control" placeholder="Testimonial"
-													rows="3"></textarea>
+													rows="3" name="ptestimonial" id="ptestimonial"></textarea>
 											</div>
 										</div>
 										
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
 												<div class="checkbox">
-													<label> <input type="checkbox"> Visible
+													<label> <input type="checkbox" name="tvisible" value="1" checked> Visible
 													</label>
 												</div>
 												
@@ -97,6 +97,8 @@
 										</div>
 										<button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
 											Submit</button>
+                                        <br>
+                                        <span id="testi_save" class="text-success"></span>
 									</form>
 								</div>
 							</div>
@@ -118,7 +120,7 @@
 								<th>Edit</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="testimonial_table">
 							
 							
 						</tbody>
@@ -181,5 +183,7 @@
 
     
     <script src="js/tables.js"></script>
+    <!-- Custom Script -->
+    <script src="js/testimonial.js"></script>
 </body>
 </html>
