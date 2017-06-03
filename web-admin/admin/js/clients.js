@@ -21,13 +21,15 @@ $("#set_clients").on('submit', (function (e) {
             $("#client_res").html(response);
         	console.log(response);
         	$("#set_clients")[0].reset();
-        	get_banner_details();
+        	get_clients_data();
         },
         error: function () {}
     });
 }));
 
-$(document)
+$(document).ready(function(){
+    get_clients_data();
+});
 var get_clients_data = function(){
     $('#example').DataTable().fnDestroy();
     $.get("clients_class_man.php",{load_clients:"get"}).done(function(response){

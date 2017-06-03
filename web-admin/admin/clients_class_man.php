@@ -12,7 +12,7 @@
  * @author jyoti
  */
 session_start();
-require_once 'smotik_con.php';
+require_once 'connections/smotik_con.php';
 class clients_class_man extends smotik_db {
     //put your code here
     public function clientUpload($data,$image) {
@@ -98,4 +98,7 @@ $new_client = new clients_class_man();
 
 if (isset ( $_POST ["client_name"] ) && isset ( $_FILES ["client_image"] ["tmp_name"] )) {
     $new_client->clientUpload($_POST,$_FILES);
+}
+if(isset($_GET["load_clients"])){
+    $new_client->getClients();
 }

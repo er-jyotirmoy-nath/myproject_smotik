@@ -31,12 +31,7 @@
 	           <div class="col-md-5">
 	              <div class="row">
 	                <div class="col-lg-12">
-	                  <div class="input-group form">
-	                       <input type="text" class="form-control" placeholder="Search...">
-	                       <span class="input-group-btn">
-	                         <button class="btn btn-primary" type="button">Search</button>
-	                       </span>
-	                  </div>
+	                 
 	                </div>
 	              </div>
 	           </div>
@@ -47,7 +42,7 @@
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="profile.html">Profile</a></li>
+	                         
 	                          <li><a href="login.html">Logout</a></li>
 	                        </ul>
 	                      </li>
@@ -77,13 +72,16 @@
           </div>
         </div>
           <div class="panel-body">
-         
+              <form class="form-horizontal" role="form" id="aboutus_frm" method="post">
           	<label>Subtitle:</label>
           	<input type="text" class="form-control" id="about_text" name="about_text">
           	<br>
-            <textarea id="tinymce_full"></textarea>
+                <textarea id="tinymce_full" name="content_about"></textarea>
             <br>
-            <input type="button" class="btn btn-primary" value="Save"/>
+            <button type="submit" class="btn btn-primary" id="save_btn" >Save</button>
+           
+            <span id="text-success" id="about_res"></span>
+            </form>
           </div>
         </div>
         
@@ -130,5 +128,8 @@
 
     <script src="js/custom.js"></script>
     <script src="js/editors.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/about_us.js"></script>
   </body>
 </html>
