@@ -75,8 +75,19 @@ if(isset($_GET["load_data"])){
 		$response_str .= '<td>'.$row["title"].'</td>';
 		$response_str .= '<td>'.$row["image_url"].'</td>';
 		$response_str .= '<td><img src="'.$row["image_url"].'" style="width:20px;height:20px;"/></td>';
-		$response_str .= '<td>Edit</td></tr>';
+		$response_str .= '<td><a id="del_banner" data-id="'.$row["id"].'"><i class="glyphicon glyphicon-trash"></i></a></td></tr>';
 		
 	}
 	echo $response_str;
+}
+
+
+if(isset($_POST["id"]) && isset($_POST["delete_ban"])){
+    $id = $_POST["id"];
+    $sql="DELETE from BANNER_TABLE WHERE ID='$id'";
+    $query=$bdd->prepare($sql);
+    $query->execute();
+    if($query->rowCount()>0){
+        echo "Done";
+    }
 }

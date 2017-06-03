@@ -32,3 +32,13 @@ var get_banner_details = function(){
 		$('#example').dataTable();
 	});
 };
+
+$(document.body).on("click","#del_banner",function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    $.post("banner_man_class.php",{id:id,delete_ban:"delete"}).done(function(response){
+        if(response.indexOf("Done") !== -1){
+                  get_banner_details();  
+           }
+    });
+});

@@ -1,7 +1,6 @@
 <?php
 
 require_once 'connections/bdd.php';
-print_r($_POST);
 if(isset($_POST["pname"]) && isset($_POST["pdesignation"]) && isset($_POST["ptestimonial"])){
     try{
      $tvisible = $_POST["tvisible"];
@@ -35,8 +34,18 @@ if(isset($_GET["load_testimonial"])){
         $testimonial_response .= "<td>".$row["designation"]."</td>";
         $testimonial_response .= "<td>".$row["testimonial"]."</td>";
         //$testimonial_response .= "<td>".$row["visible"]."</td>";
-        $testimonial_response .= "<td>Edit</td>";
+        $testimonial_response .= '<td><a id="del_testimonial" data-id="'.$row["id"].'"><i class="glyphicon glyphicon-trash"></i></a></td>';
         $testimonial_response .= "</tr>";
     }
     echo $testimonial_response;
+}
+
+if(isset($_POST["id"]) && isset($_POST["delete_test"])){
+    $id = $_POST["id"];
+    $sql = "DELETE FROM testimonials where id = '$id' ";
+    $query = $bdd->prepare($sql);
+    $query->execute();
+    if($query->rowCount()>0){
+        echo "Done";
+    }
 }
