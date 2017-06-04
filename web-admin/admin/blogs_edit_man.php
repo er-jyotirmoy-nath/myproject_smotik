@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Smotik Admin Panel-Clints Edit</title>
+        <title>Smotik Admin Panel-Blogs Edit</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- jQuery UI -->
         <link
@@ -48,72 +48,23 @@
 
 
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="content-box-large">
-                                <div class="panel-heading">
-                                    <div class="panel-title">Add Clients</div>
-
-                                    <div class="panel-options">
-                                        <a href="#" data-rel="collapse"><i
-                                                class="glyphicon glyphicon-refresh"></i></a> <a href="#"
-                                                                                        data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="rootwizard">
-
-                                        <form class="form-horizontal" role="form" method="post" id="set_clients">
-                                            <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">Clients Name</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="client_name" name="client_name"
-                                                           placeholder="Name">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-md-2 control-label">Image</label>
-                                                <div class="col-md-10">
-                                                    <input type="file" class="btn btn-default" id="client_image" name="client_image">
-                                                    <p class="help-block" id="client_res">
-                                                        
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
-                                                    <div class="checkbox">
-                                                        <label> <input type="checkbox" name="client_vis" checked id="client_vis" value="1"> Visible
-                                                        </label>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
-                                                Submit</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="content-box-large">
                         <div class="panel-heading">
-                            <div class="panel-title">Clients</div>
+                            <div class="panel-title">Blogs</div>
                         </div>
                         <div class="panel-body">
                             <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Person</th>
-                                        <th>Designation</th>
-                                        <th>Testimonial</th>
+                                        <th>Title</th>
+                                        <th>Image</th>
+                                        <th>Blog</th>
                                         <th>Edit</th>
                                     </tr>
                                 </thead>
-                                <tbody id="clients_data_table">
+                                <tbody id="blogs_data_table">
 
 
                                 </tbody>
@@ -177,6 +128,12 @@
 
         <script src="js/tables.js"></script>
         <!-- Custom Scripts -->
-        <script src="js/clients.js"></script>
+        <script src="js/blogs.js"></script>
+         <script>
+            $(document).ready(function () {
+                get_blogs_data();
+                
+            });
+        </script>
     </body>
 </html>

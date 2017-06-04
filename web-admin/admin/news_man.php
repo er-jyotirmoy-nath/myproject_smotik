@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Smotik Admin Panel-Clints Edit</title>
+        <title>Smotik Admin Panel-News Edit</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- jQuery UI -->
         <link
@@ -52,7 +52,7 @@
                         <div class="col-md-12">
                             <div class="content-box-large">
                                 <div class="panel-heading">
-                                    <div class="panel-title">Add Clients</div>
+                                    <div class="panel-title">Add News</div>
 
                                     <div class="panel-options">
                                         <a href="#" data-rel="collapse"><i
@@ -65,7 +65,7 @@
 
                                         <form class="form-horizontal" role="form" method="post" id="set_clients">
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">Clients Name</label>
+                                                <label for="inputEmail3" class="col-sm-2 control-label">News Title</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="client_name" name="client_name"
                                                            placeholder="Name">
@@ -76,11 +76,16 @@
                                                 <div class="col-md-10">
                                                     <input type="file" class="btn btn-default" id="client_image" name="client_image">
                                                     <p class="help-block" id="client_res">
-                                                        
+
                                                     </p>
                                                 </div>
                                             </div>
-
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">News</label>
+                                                <div class="col-sm-10">
+                                                    <textarea class="form-control" placeholder="Textarea" rows="3"></textarea>
+                                                </div>
+                                            </div>
                                             <div class="form-group">
                                                 <div class="col-sm-offset-2 col-sm-10">
                                                     <div class="checkbox">

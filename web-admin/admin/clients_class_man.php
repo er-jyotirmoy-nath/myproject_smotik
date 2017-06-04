@@ -18,7 +18,7 @@ class clients_class_man extends smotik_db {
     public function clientUpload($data,$image) {
         try {
                 $title = $data ["client_name"];
-                $isvisible = $data ["client_vis"];
+                $isvisible = (isset($data ["client_vis"]))?"1":"0";
 		$target_dir = "images/";
 		$target_file = $target_dir . basename ( $image ["client_image"] ["name"] );
 		$uploadOk = 1;

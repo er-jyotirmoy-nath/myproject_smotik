@@ -115,7 +115,19 @@ class main extends smotik_db {
         
         echo $content;
     }
-
+    
+    public function getclientdetails() {
+        $content = '';
+        $sql = "SELECT `id`, `name`, `image_url`, `visible` FROM `clients` WHERE visible = 1";
+        $query = $this->bdd->prepare($sql);
+        $query->execute();
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $content.=' <div class="col-sm-2 col-xs-6">
+                    <img src="web-admin/admin/'.$row["image_url"].'" class="img-thumbnail" alt="'.$row["name"].'" />
+                </div>';
+        }
+        echo $content;
+    }
 }
 
 $new_web_load = new main();
