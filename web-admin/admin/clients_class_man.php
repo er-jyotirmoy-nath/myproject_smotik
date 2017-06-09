@@ -13,10 +13,11 @@
  */
 session_start();
 require_once 'connections/smotik_con.php';
-class clients_class_man extends smotik_db {
+class clients_class_man  {
     //put your code here
     public function clientUpload($data,$image) {
         try {
+                $bdd = smotik_db::getInstance();
                 $title = $data ["client_name"];
                 $isvisible = (isset($data ["client_vis"]))?"1":"0";
 		$target_dir = "images/";
@@ -67,7 +68,7 @@ class clients_class_man extends smotik_db {
 			}
 		}
 		$sql = "INSERT INTO `clients`( `image_url`, `name`, `visible`) VALUES ('$target_file','$title','$isvisible')";
-		$query = $this->bdd->prepare ( $sql );
+		$query = $bdd->prepare ( $sql );
 		$query->execute ();
 		if ($query->rowCount () > 0) {
 			echo "All Done";
@@ -78,9 +79,10 @@ class clients_class_man extends smotik_db {
     }
     
     public function getClients() {
+        $bdd = smotik_db::getInstance();
         $response_str = '';
         $sql = "Select * from clients";
-        $query = $this->bdd->prepare($sql);
+        $query = $bdd->prepare($sql);
         $query->execute();
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
 		

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bootstrap Admin Theme v3</title>
+        <title>SMOTIK Admin Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- jQuery UI -->
         <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
@@ -71,7 +71,7 @@
 
                     <div class="content-box-large">
                         <div class="panel-heading">
-                            <div class="panel-title">Blog Add</div>
+                            <div class="panel-title">Manage Blog</div>
 
                             <div class="panel-options">
 
@@ -88,17 +88,17 @@
                                 <input type="file" class="btn btn-default" id="blog_image" required="required" name="blog_image">
                                 <br>
                                 <div class="checkbox">
-                                    <label> <input type="checkbox" name="blogs_vis" checked id="blogs_vis" value="1"> Visible
+                                    <label> <input type="checkbox" name="blogs_vis" id="blogs_vis" > Visible
                                     </label>
                                 </div>
                                 <br>
                                 <textarea id="tinymce_full" name="content_blog"></textarea>
                                 <br>
-
+                                <input type="hidden" name="blog_id" id="blog_id" />
                                 <input type="hidden" name="ent_type" id="ent_type" value="save" />
                                 <button type="submit" class="btn btn-primary" id="save_btn" >Save</button>
 
-                                <span id="text-success" id="blogs_res"></span>
+                                <span class="text-success" id="blogs_res"></span>
                             </form>
                         </div>
                     </div>
@@ -155,6 +155,8 @@
                 var urlparam = param[1];
                 urlparam = urlparam.split('=');
                 urlparam = urlparam[1];
+                $("#blog_id").val(urlparam);
+                $("#ent_type").val("update");
                 if (urlparam !== "undefined") {
                     $.get("blogs_man_class.php", {get_content: "get",id:urlparam}).done(function (response) {
                         console.log(response);

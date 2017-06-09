@@ -1,6 +1,7 @@
 <?php
 // print_r($_POST);
 require_once 'connections/bdd.php';
+$bdd = smotik_db::getInstance();
 if (isset ( $_POST ["banner_title"] ) && isset ( $_FILES ["banner_image"] ["tmp_name"] )) {
 	try {
 		$title = filter_input ( INPUT_POST, "banner_title" );

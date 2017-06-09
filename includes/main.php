@@ -7,13 +7,14 @@
  */
 require_once '../myproject_smotik/web-admin/admin/connections/smotik_con.php';
 
-class main extends smotik_db {
+class main  {
 
     public function imageSlideCounter() {
+        $bdd = smotik_db::getInstance();
         $indicators = '';
         $counter = 0;
         $sql = "SELECT * FROM `banner_table` WHERE id is not null";
-        $query = $this->bdd->prepare($sql);
+        $query = $bdd->prepare($sql);
         $query->execute();
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             if ($counter == 0) {
@@ -27,10 +28,11 @@ class main extends smotik_db {
     }
 
     public function imageSlider() {
+        $bdd = smotik_db::getInstance();
         $sliders = '';
         $counter = 0;
         $sql = "SELECT * FROM `banner_table` WHERE id is not null and visible != 0";
-        $query = $this->bdd->prepare($sql);
+        $query = $bdd->prepare($sql);
         $query->execute();
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             if ($counter == 0) {
@@ -54,9 +56,10 @@ class main extends smotik_db {
     }
 
     public function getAboutUs() {
+        $bdd = smotik_db::getInstance();
         $content = '';
         $sql = "SELECT * FROM `home_content_table` WHERE section = 'about_us'";
-        $query = $this->bdd->prepare($sql);
+        $query = $bdd->prepare($sql);
         $query->execute();
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             $content .= $row["content"];
@@ -65,10 +68,11 @@ class main extends smotik_db {
     }
 
     public function testimonialSliderCounter() {
+        $bdd = smotik_db::getInstance();
         $indicator = '';
         $counter = 0;
         $sql = "SELECT `id`, `person`, `designation`, `testimonial`, `visible` FROM `testimonials` WHERE visible = '1'";
-        $query = $this->bdd->prepare($sql);
+        $query = $bdd->prepare($sql);
         $query->execute();
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             if ($counter == 0) {
@@ -83,10 +87,11 @@ class main extends smotik_db {
     }
 
     public function testimonialSliders() {
+        $bdd = smotik_db::getInstance();
         $content = '';
         $counter = 0;
         $sql = "SELECT `id`, `person`, `designation`, `testimonial`, `visible` FROM `testimonials` WHERE visible = '1'";
-        $query = $this->bdd->prepare($sql);
+        $query = $bdd->prepare($sql);
         $query->execute();
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             if ($counter == 0) {
@@ -117,14 +122,56 @@ class main extends smotik_db {
     }
     
     public function getclientdetails() {
+        $bdd = smotik_db::getInstance();
         $content = '';
         $sql = "SELECT `id`, `name`, `image_url`, `visible` FROM `clients` WHERE visible = 1";
-        $query = $this->bdd->prepare($sql);
+        $query = $bdd->prepare($sql);
         $query->execute();
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
             $content.=' <div class="col-sm-2 col-xs-6">
                     <img src="web-admin/admin/'.$row["image_url"].'" class="img-thumbnail" alt="'.$row["name"].'" />
                 </div>';
+        }
+        echo $content;
+    }
+    
+    public function getBlogs() {
+        $bdd = smotik_db::getInstance();
+        $content = '';
+        $sql = "SELECT `id`, `title`, `image_url`, `content_blog`, `visible`, `date_blog` FROM `blogs_table` WHERE visible = '1' order by date_blog desc limit 0,2";
+        $query = $bdd->prepare($sql);
+        $query->execute();
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $content.=' <div class="single_blog">
+                                <div class="img_holder float_left">
+                                    <img src="web-admin/admin/'.$row["image_url"].'" class="img-responsive" alt=""
+                                         width="167" height="152">
+                                </div>
+
+                                <div class="post float_left">
+                                    <div class="date">
+                                        <span>'.date('d', strtotime($row["date_blog"])).' <br> '.date('M', strtotime($row["date_blog"])).'
+                                        </span>
+                                    </div>
+                                    <div class="post_title">
+                                        <a href="#"><h5>'.strtoupper($row["title"]).'</h5></a>
+
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-user"
+                                                               aria-hidden="true"></i> admin</a></li>
+                                           
+                                            <li><a href="#"><i class="fa fa-heart"
+                                                               aria-hidden="true"></i> 48 Likes</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <p>'.substr($row["content_blog"],0,100).'</p>
+                                    <div class="btn-pd">
+                                        <a href="#">Read more...</a>
+                                    </div>
+                                </div>
+                                <div class="clear_fix"></div>
+                            </div>';
         }
         echo $content;
     }

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'connections/bdd.php';
+$bdd = smotik_db::getInstance();
 if(isset($_POST["pname"]) && isset($_POST["pdesignation"]) && isset($_POST["ptestimonial"])){
     try{
      $tvisible = $_POST["tvisible"];

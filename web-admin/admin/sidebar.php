@@ -40,16 +40,17 @@
             <ul>
                 <li><a href="about_us.php"><i class="glyphicon glyphicon-pencil"></i>
                         About Us</a></li>
-
+                        <li><a href="entrance_man.php"><i class="glyphicon glyphicon-pencil"></i>
+                        Entrance Mgmt.</a></li>
                 <li><a href="signup.html">Signup</a></li>
             </ul></li>
     </ul>
 </div>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script>
-    $(document).ready(function() {
-	// get current URL path and assign 'active' class
-	var pathname = window.location.pathname;
-	$('.nav > li > a[href="'+pathname+'"]').parent().addClass('active');
-})
+    $(document).ready(function () {
+        // get current URL path and assign 'active' class
+        var pathname = window.location.pathname;
+        $('.nav > li > a[href="' + pathname + '"]').parent().addClass('active');
+    })
 </script>

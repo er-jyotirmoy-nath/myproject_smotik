@@ -2,11 +2,24 @@
 
 class smotik_db {
 
-    protected $bdd = '';
+    private static $instance = null;
+    
+    private function __clone() {
+        
+    }
 
-    function __construct() {
-        try {
-            $this->bdd = new PDO('mysql:host=localhost;dbname=smotik_db;charset=utf8', 'smotik_admin', 'zuQBRwCHx7exXTZx');
+    private function __construct() {
+        
+    }
+    
+    public static function getInstance() {
+         try {
+            $conn = new PDO('mysql:host=localhost;dbname=smotik_db;charset=utf8', 'smotik_admin', 'zuQBRwCHx7exXTZx');
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            if(!isset(self::$instance)){
+                self::$instance = $conn;
+            }
+            return self::$instance;
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }

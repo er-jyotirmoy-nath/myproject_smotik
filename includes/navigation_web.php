@@ -38,7 +38,7 @@
 			<div class="collapse navbar-collapse nvtp"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="index.php">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="about.php">About US</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Our Solutions <b class="caret"></b></a>
@@ -66,3 +66,24 @@
 		</div>
 		<!-- /.container -->
 	</nav>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+	// get current URL path and assign 'active' class
+	var element = $('ul.nav a').filter(function () {
+
+            return (this.href == url && (this.href != "http://nsfaaws6.nsf.org/lab_control_v2/main.php" && this.href != "https://wrcnsf.com/lab_control_v2/main.php"));
+        }).addClass('active').parent();
+
+        while (true) {
+            if (element.is('li')) {
+                element = element.parent().addClass('in').parent();
+            } else {
+                break;
+
+            }
+        }
+
+
+})
+</script>
