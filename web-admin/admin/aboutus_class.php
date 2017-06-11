@@ -12,7 +12,7 @@
  * @author jyoti
  */
 session_start();
-require_once 'model/content_class.php';
+require_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/model/content_class.php';
 
 class aboutus_class extends content_class  {
     
@@ -24,7 +24,8 @@ class aboutus_class extends content_class  {
 }
 
 $new_about_content = new aboutus_class();
-if (isset($_POST["set_content"]) && isset($_POST["about_content"]) && $_POST["set_content"] == "save") {
+if (isset($_POST["subtitle"]) && isset($_POST["about_content"]) && $_POST["set_content"] == "save") {
+    
     $subtitle = $_POST["subtitle"];
     $content = $_POST["about_content"];
     $new_about_content->saveContent($subtitle, $content, 'about_us');

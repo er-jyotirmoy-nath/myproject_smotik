@@ -1,4 +1,4 @@
-<?php require_once 'includes/main.php'; ?>
+<?php require_once 'model/main.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,7 +39,9 @@
 
         <!-- Page Content -->
         <div class="container">
-        <?php require_once 'aboutus_module.php'; ?>
+        <?php require_once 'model/aboutus_model.php'; 
+                require_once 'view/pages/aboutus_page.php';
+        ?>
         </div>
         <?php require_once 'testimonial_module.php'; ?>
 

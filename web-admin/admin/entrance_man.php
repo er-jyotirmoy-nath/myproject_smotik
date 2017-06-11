@@ -45,7 +45,7 @@
                         <div class="panel-body">
                             <form class="form-horizontal" role="form" id="entrance_frm" method="post">
                                 <label>Subtitle:</label>
-                                <input type="text" class="form-control" id="about_text" name="entrance_text">
+                                <input type="text" class="form-control" id="entrance_text" name="entrance_text">
                                 <br>
                                 <textarea id="tinymce_full" name="entrance_about"></textarea>
                                 <br>
@@ -61,7 +61,7 @@
                         <div class="col-md-12">
                             <div class="content-box-large">
                                 <div class="panel-heading">
-                                    <div class="panel-title">Add Key Use Cases</div>
+                                    <div class="panel-title">Add Products</div>
 
                                     <div class="panel-options">
                                     </div>
@@ -71,25 +71,42 @@
 
                                         <form class="form-horizontal" role="form" method="post" id="set_usecases">
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                                                <label for="inputEmail3" class="col-sm-2 control-label">Product</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="company_name" name="company_name"
-                                                           placeholder="Name">
+                                                    <input type="text" class="form-control" id="company_name" name="prod_name"
+                                                           placeholder="Name" required="required">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-2 control-label">Image</label>
+                                                <label class="col-md-2 control-label">Carousel Image</label>
                                                 <div class="col-md-10">
-                                                    <input type="file" class="btn btn-default" id="company_image" name="company_image">
-                                                    <p class="help-block" id="company_res">
+                                                    
+                                                    <input type="file" class="btn btn-default" id="userfile[]" name="userfile[]" required="required">
+                                                    <input type="file" class="btn btn-default" id="userfile[]" name="userfile[]" required="required">
+                                                    <input type="file" class="btn btn-default" id="userfile[]" name="userfile[]" required="required">
+                                                    
+                                                    <p class="help-block" id="entrance_case_res">
 
                                                     </p>
+                                                </div>
+                                            </div>
+                                            
+                                             <div class="form-group">
+                                                <label class="col-md-2 control-label">Product Use</label>
+                                                <div class="col-md-10">
+                                                    
+                                                    <input type="file" class="btn btn-default" id="userfile[]" name="userfile[]" required="required">
+                                                    <input type="file" class="btn btn-default" id="userfile[]" name="userfile[]" required="required">
+                                                    <input type="file" class="btn btn-default" id="userfile[]" name="userfile[]" required="required">
+                                                    <input type="file" class="btn btn-default" id="userfile[]" name="userfile[]" required="required">
+                                                    
+                                                   
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Textarea</label>
                                                 <div class="col-sm-10">
-                                                    <textarea class="form-control" id="entrance_usecase_content" name="entrance_usecase_content" placeholder="Textarea" rows="3"></textarea>
+                                                    <textarea class="form-control" id="entrance_usecase_content" name="entrance_usecase_content" placeholder="Textarea" rows="3" required="required"></textarea>
                                                 </div>
                                             </div>   
                                             <div class="form-group">
@@ -103,6 +120,9 @@
                                             </div>
                                             <button type="submit" class="btn btn-primary" id="case_save_btn"><i class="fa fa-save"></i>
                                                 Submit</button>
+                                             <p class="help-block" id="entrance_case_res">
+
+                                                    </p>
                                         </form>
                                     </div>
                                 </div>
@@ -115,17 +135,17 @@
                             <div class="panel-title">Cases</div>
                         </div>
                         <div class="panel-body">
-                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" style="width: 100%">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Person</th>
-                                        <th>Designation</th>
-                                        <th>Testimonial</th>
+                                        <th>Title</th>
+                                        <th>Content</th>
+                                        <th>Image</th>
                                         <th>Edit</th>
                                     </tr>
                                 </thead>
-                                <tbody id="clients_data_table">
+                                <tbody id="usecase_data_table">
 
 
                                 </tbody>
@@ -169,7 +189,9 @@
         <script src="vendors/ckeditor/adapters/jquery.js"></script>
 
         <script type="text/javascript" src="vendors/tinymce/js/tinymce/tinymce.min.js"></script>
+         <script src="vendors/datatables/js/jquery.dataTables.min.js"></script>
 
+        <script src="vendors/datatables/dataTables.bootstrap.js"></script>
         <script src="js/custom.js"></script>
         <script src="js/editors.js"></script>
 

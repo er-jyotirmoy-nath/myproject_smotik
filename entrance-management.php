@@ -1,3 +1,4 @@
+<?php require_once 'includes/main.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,46 +42,13 @@
 
         <div class="container srv">
             <div class="row">
-                <h2 class="page-header chdg">Entrance Management </h2>
-
-                <div class="col-md-12 abt-txt">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <br>
-                </div>
+               <?php $new_web_load->getEntrancePage(); ?>
 
                 <h2 class="page-header ">Key uses cases </h2>
 
-                <div class="row">
-                    <div class="col-md-6 img-portfolio">
-                        <a href="#"><img class="img-responsive img-hover" src="img/img3.jpg" alt=""></a>
-                        <h3>Lorem ipsum dolor sit amet</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
+               
 
-                    <div class="col-md-6 img-portfolio">
-                        <a href="portfolio-item.html"><img class="img-responsive img-hover" src="img/img3.jpg" alt=""></a>
-                        <h3>Lorem ipsum dolor sit amet</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 img-portfolio">
-                        <a href="#"><img class="img-responsive img-hover" src="img/img3.jpg" alt=""></a>
-                        <h3>Lorem ipsum dolor sit amet</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-
-                    <div class="col-md-6 img-portfolio">
-                        <a href="portfolio-item.html"><img class="img-responsive img-hover" src="img/img3.jpg" alt=""></a>
-                        <h3>Lorem ipsum dolor sit amet</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                    </div>
-                </div>
+                <?php $new_web_load->getUseCases(); ?>
 
 
 

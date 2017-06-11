@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+$(document).ready(function(){
+    get_entrance_content();
+    get_usecase_data();
+});
 
 $("#entrance_frm").submit(function (e) {
     e.preventDefault();
@@ -46,10 +49,11 @@ $("#set_usecases").submit(function(e){
     var formdata = new FormData(this);
     var entrance_usecase_content = $("#entrance_usecase_content").val();
     var company_name = $("#company_name").val();
-    var blogs_vis = ($("#case_vis").is(":checked"))?"1":"0";
+    var case_vis = ($("#case_vis").is(":checked"))?"1":"0";
     formdata.append('entrance_usecase_content',entrance_usecase_content);
     formdata.append('company_name',company_name);
-    formdata.append('blogs_vis',blogs_vis);
+    formdata.append('case_vis',case_vis);
+    formdata.append('entry_type',"save");
      $.ajax({
         url: "entrance_class.php",
         type: "POST",
@@ -60,10 +64,19 @@ $("#set_usecases").submit(function(e){
         success: function (response) {
                 console.log(response);
                 $("#set_usecases")[0].reset();
-                $("#save_btn").html('Save');
-                $("#save_btn").prop("disabled", false);
-        	//get_clients_data();
+                $("#case_save_btn").html('Save');
+                $("#case_save_btn").prop("disabled", false);
+                $("#entrance_case_res").html(response);
+        	get_usecase_data();
         },
         error: function () {}
     });
 });
+
+var get_usecase_data = function(){
+    $('#example').DataTable().fnDestroy();
+    $.get("entrance_class.php",{load_usecases:"get"}).done(function(response){
+        $("#usecase_data_table").html(response);
+        $('#example').dataTable();
+    });
+};

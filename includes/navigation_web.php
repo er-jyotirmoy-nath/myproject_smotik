@@ -39,11 +39,11 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="about.php">About US</a></li>
+					<li><a href="smotik.php?page=aboutus&query=home">About US</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Our Solutions <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="entrance-management.php">Entrance
+							<li><a href="smotik.php?page=entrance&query=home">Entrance
 									Management</a></li>
 							<li><a href="security-management.php">Safety and
 									Security Management</a></li>

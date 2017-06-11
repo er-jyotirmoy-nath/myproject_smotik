@@ -1,4 +1,4 @@
-
+<div class="container inner-height">
 
 		<div class="row">
 			<div class="col-lg-12">
@@ -8,8 +8,8 @@
 				<img class="img-responsive" src="img/about.jpg" alt="">
 			</div>
 			<div class="col-md-6 abt-txt">
-				<?php $new_web_load->getAboutUs(); ?>
+				<?php $new_aboutus->getAboutUs(); ?>
 			</div>
 		</div>
 
-	
+	</div>

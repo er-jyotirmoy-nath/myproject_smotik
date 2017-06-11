@@ -1,16 +1,10 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 $("#aboutus_frm").submit(function (e) {
     e.preventDefault();
     $("#save_btn").html('<i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i> Saving..');
     $("#save_btn").prop("disabled", true);
     var subtitle = $('#about_text').val();
     var about_content = tinymce.get('tinymce_full').getContent();
-
+    
     $.ajax({
         url: "aboutus_class.php",
         method: "POST",

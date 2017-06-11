@@ -75,7 +75,7 @@ class blogs_class  {
             $query = $bdd->prepare($sql);
             $query->execute();
             if ($query->rowCount() > 0) {
-                echo " Saved!!";
+                echo "Done";
             }
         } catch (Exception $e) {
             echo $e->getMessage();
