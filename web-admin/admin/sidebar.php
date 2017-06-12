@@ -30,6 +30,8 @@
                 Clients</a></li>
         <li><a href="testimonials.php"><i class="glyphicon glyphicon-comment"></i>
                 Testimonials</a></li>
+                <li><a href="products_man.php"><i class="glyphicon glyphicon-shopping-cart"></i>
+                Products</a></li>
         <li><a href="banners_man.php"><i
                     class="glyphicon glyphicon-sound-stereo"></i> Edit Banners</a></li>
         <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i>
@@ -40,7 +42,7 @@
             <ul>
                 <li><a href="about_us.php"><i class="glyphicon glyphicon-pencil"></i>
                         About Us</a></li>
-                        <li><a href="entrance_man.php"><i class="glyphicon glyphicon-pencil"></i>
+                <li><a href="entrance_man.php"><i class="glyphicon glyphicon-pencil"></i>
                         Entrance Mgmt.</a></li>
                 <li><a href="signup.html">Signup</a></li>
             </ul></li>

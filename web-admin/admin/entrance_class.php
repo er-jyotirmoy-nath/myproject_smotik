@@ -51,12 +51,12 @@ class entrance_class extends content_class {
                 print 'File Size: ' . $file['size'];
                 print 'File Error: ' . $file['error'];
                 print 'File Type: ' . $file['type'];*/
-                print '<br>';
+                
                 if ($file['type'] == "image/jpeg" && $file['error'] == 0) {
                     $target_dir = 'images/entrance_prods/';
                     $target_file = $target_dir . basename($file["name"]);
                     if (move_uploaded_file($file ["tmp_name"], $target_file)) {
-                        echo "The file " . basename($file ["name"]) . " has been uploaded.";
+                        //echo "The file " . basename($file ["name"]) . " has been uploaded.";
                         $temp[] = $target_file;
                     } else {
                         echo "Sorry, there was an error uploading your file.";
@@ -68,10 +68,11 @@ class entrance_class extends content_class {
                 }
             }
             $date_blog = date('d-m-Y', strtotime('now'));
-            print_r($temp);
-            if(0){$sql = "INSERT INTO `products_table`(`name`, `description`, `section`, `carousel_1`,"
+            
+            if(1){$sql = "INSERT INTO `products_table`(`name`, `description`, `section`, `carousel_1`,"
                     . " `carousel_2`, `carousel_3`, `use_1`, `use_2`, `use_3`, `use_4`, `visible`) "
-                    . "VALUES ('$title','$target_file','$content','$isvisible','$date_blog')";
+                    . "VALUES ('$title','$content','entrance',"
+                    . "'".$temp[0]."','".$temp[1]."','".$temp[2]."','".$temp[3]."','".$temp[4]."','".$temp[5]."','".$temp[6]."','$isvisible')";
             $query = $bdd->prepare($sql);
             $query->execute();
             if ($query->rowCount() > 0) {
