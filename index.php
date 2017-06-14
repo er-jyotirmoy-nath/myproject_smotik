@@ -30,7 +30,7 @@
 
     </head>
 
-    <body>
+    <body ng-app="smotikapp">
         <!-- Navigation -->
         <?php require_once 'includes/navigation_web.php'; ?>
 
@@ -177,7 +177,8 @@
 
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
-
+        <script src="https://code.angularjs.org/1.4.1/angular.min.js"></script>
+        <Script src="https://code.angularjs.org/1.4.1/angular-route.min.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/login.js"></script>
