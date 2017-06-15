@@ -1,1 +1,5 @@
 
+AddDefaultCharset UTF-8
+RewriteEngine on
+RewriteBase /
+RewriteRule ^blog/([0-9]+)/?$ blog.php?type=post&id=$1 [L]
