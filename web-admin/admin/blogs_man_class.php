@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 session_start();
-require_once 'connections/smotik_con.php';
+require_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/connections/smotik_con.php';
 
 class blogs_class  {
 
@@ -88,16 +88,8 @@ class blogs_class  {
         $sql = "SELECT * FROM `blogs_table`";
         $query = $bdd->prepare($sql);
         $query->execute();
-        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+        echo json_encode($query->fetchAll(PDO::FETCH_ASSOC));
 
-            $response_str .= '<tr><td>' . $row["id"] . '</td>';
-            $response_str .= '<td>' . $row["title"] . '</td>';
-            $response_str .= '<td><img src="' . $row["image_url"] . '" style="width:40px;height:40px;"/></td>';
-            $response_str .= '<td>' . substr($row["content_blog"], 0, 85) . '...</td>';
-            $response_str .= '<td><a href="blogs_man.php?id=' . $row["id"] . '" id="edit_blog" data-id="' . $row["id"] . '"><i class="glyphicon glyphicon-edit"></i></a>'
-                    . '<a id="del_blog" data-id="' . $row["id"] . '"><i class="glyphicon glyphicon-trash"></i></a></td></tr>';
-        }
-        echo $response_str;
     }
 
     public function blogDetail($param) {
@@ -106,11 +98,7 @@ class blogs_class  {
         $sql = "SELECT `id`, `title`, `image_url`, `content_blog`, `visible` FROM `blogs_table` WHERE id = '$param'";
         $query = $bdd->prepare($sql);
         $query->execute();
-        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-            $temp["subtitle"] = $row["title"];
-            $temp["content"] = ($row["content_blog"]);
-        }
-        echo json_encode($temp);
+        echo json_encode($query->fetchAll(PDO::FETCH_ASSOC));
     }
 
     public function deleteBlog($param) {

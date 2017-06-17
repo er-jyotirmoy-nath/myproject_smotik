@@ -21,7 +21,7 @@
                 <li><a href="#/blogs_man"><i class="glyphicon glyphicon-font"></i> Add Blog
                     </a> </li>
 
-                <li><a href="blogs_edit_man.php"><i class="glyphicon glyphicon-edit"></i> Edit Blog
+                <li><a href="#/blog_edit"><i class="glyphicon glyphicon-edit"></i> Edit Blog
                     </a></li>
             </ul></li>
 
