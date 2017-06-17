@@ -18,7 +18,7 @@
                 Blogs <span class="caret pull-right"></span>
             </a> <!-- Sub menu -->
             <ul>
-                <li><a href="blogs_man.php"><i class="glyphicon glyphicon-font"></i> Add Blog
+                <li><a href="#/blogs_man"><i class="glyphicon glyphicon-font"></i> Add Blog
                     </a> </li>
 
                 <li><a href="blogs_edit_man.php"><i class="glyphicon glyphicon-edit"></i> Edit Blog

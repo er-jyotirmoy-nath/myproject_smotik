@@ -54,7 +54,8 @@
     <script src="js/angular-route.js"></script>
     <script src="js/angular-sanitize.js"></script>
     <script src="app.js"></script>
-    <script src="js/news.js"></script>
+    <script src="controller/news.js"></script>
+    <script src="controller/blogs.js"></script>
     <!-- <script src="js/login_script.js"></script> -->
 
     <script src="js/custom.js"></script>

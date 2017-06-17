@@ -5,7 +5,7 @@ myapp.config(function ($routeProvider) {
   $routeProvider.
     when('/', { templateUrl: "partials/main.php", controller: "mainCtrl" })
     .when('/news_man', { templateUrl: "partials/news.php", controller: "newsCtrl" })
-    .when('/entrance_management', { templateUrl: "view/pages/entrance.html", controller: "entranceCtrl" })
+    .when('/blogs_man', { templateUrl: "partials/blogs.php", controller: "blogCtrl" })
     .when('/security_management', { templateUrl: "view/pages/security_man.html", controller: "securityCtrl" })
     .when('/smart_home_management', { templateUrl: "view/pages/smart_home_man.html", controller: "smarthomeCtrl" })
     .when('/music_zoning', { templateUrl: "view/pages/music_zone.html", controller: "musicCtrl" })
@@ -20,4 +20,20 @@ myapp.config(function ($routeProvider) {
 
 myapp.controller("mainCtrl", ['$scope', function ($scope) {
 
+}]);
+
+myapp.directive('fileModel', ['$parse', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
 }]);
