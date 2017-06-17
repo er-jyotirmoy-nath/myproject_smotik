@@ -56,7 +56,8 @@
                                                         <option value="section3">Section 3</option>
                                                         <option value="section4">Section 4</option>
                                                         
-                                                    </select><span id="selected_section"></span>
+                                                    </select><br>
+                                                    <span class="text-info" id="selected_section"></span>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -189,6 +190,19 @@
         <script src="js/entrance_man.js"></script>
         <script>
             $("#select_section").change(function(){
+                var val = $(this).val();
+                switch(val):{
+                    case "":
+                        break;
+                        case:
+                        break;
+                        case:
+                        break;
+                        case:
+                        break;
+                        case:
+                        break;
+                    }
                 $("#selected_section").html($(this).val());
             });
         </script>

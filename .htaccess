@@ -1,5 +1,5 @@
-
-AddDefaultCharset UTF-8
 RewriteEngine on
+Options +FollowSymlinks
 RewriteBase /
-RewriteRule ^blog/([0-9]+)/?$ blog.php?type=post&id=$1 [L]
+
+RewriteRule /smotik/([a-z]+) /myproject_smotik/smotik.php?page=$1 [R]

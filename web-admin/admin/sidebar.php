@@ -1,7 +1,7 @@
 <div class="sidebar content-box" style="display: block;">
     <ul class="nav">
         <!-- Main menu -->
-        <li ><a href="index.php"><i
+        <li ><a href="#/"><i
                     class="glyphicon glyphicon-home"></i> Dashboard</a></li>
     <!--<li><a href="calendar.html"><i class="glyphicon glyphicon-calendar"></i>
                     Calendar</a></li>-->
@@ -11,17 +11,17 @@
                     Tables</a></li>
     <li><a href="buttons.html"><i class="glyphicon glyphicon-record"></i>
                     Buttons</a></li>-->
-        <li><a href="news_man.php"><i class="glyphicon glyphicon-film"></i>
+        <li><a href="#/news_man"><i class="glyphicon glyphicon-film"></i>
                 News</a></li>
 
         <li class="submenu"><a href="#"> <i class="glyphicon glyphicon-volume-up"></i>
                 Blogs <span class="caret pull-right"></span>
             </a> <!-- Sub menu -->
             <ul>
-                <li><a href="blogs_man.php"><i class="glyphicon glyphicon-font"></i> Add Blog 
+                <li><a href="blogs_man.php"><i class="glyphicon glyphicon-font"></i> Add Blog
                     </a> </li>
 
-                <li><a href="blogs_edit_man.php"><i class="glyphicon glyphicon-edit"></i> Edit Blog 
+                <li><a href="blogs_edit_man.php"><i class="glyphicon glyphicon-edit"></i> Edit Blog
                     </a></li>
             </ul></li>
 

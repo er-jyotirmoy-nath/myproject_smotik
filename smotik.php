@@ -1,9 +1,20 @@
 <?php
-if (!isset($_GET["page"]) && !isset($_GET["action"])) {
+if (!isset($_GET["page"])) {
     header('Location: index.php');
 } else {
     $controller = $_GET["page"];
-    $action = $_GET["query"];
+    switch ($controller) {
+      case 'aboutus':
+        $action = 'home';
+        break;
+      case 'entrance':
+        $action = 'home';
+        break;
+      default:
+        # code...
+        break;
+    }
+    
 }
 require_once 'web-admin/admin/connections/smotik_con.php';
 ?>
