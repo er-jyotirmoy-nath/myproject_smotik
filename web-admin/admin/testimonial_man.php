@@ -4,12 +4,12 @@ require_once 'connections/smotik_con.php';
 $bdd = smotik_db::getInstance();
 $getdata = file_get_contents("php://input");
 $json_data = json_decode($getdata,true);
-if(isset($_POST["pname"]) && isset($_POST["pdesignation"]) && isset($_POST["ptestimonial"])){
+if(isset($json_data["pname"]) && isset($json_data["pdesignation"]) && isset($json_data["ptestimonial"])){
     try{
-     $tvisible = $_POST["tvisible"];
-    $pname = $_POST["pname"];
-    $pdesignation = $_POST["pname"];
-    $ptestimonial = $_POST["ptestimonial"];
+     $tvisible = $json_data["tvisible"];
+    $pname = $json_data["pname"];
+    $pdesignation = $json_data["pname"];
+    $ptestimonial = $json_data["ptestimonial"];
     $sql  = "INSERT INTO `testimonials`(`person`, `designation`, `testimonial`, `visible`) 
     VALUES ('$pname','$pdesignation','$ptestimonial','$tvisible')";
     $query = $bdd->prepare($sql);

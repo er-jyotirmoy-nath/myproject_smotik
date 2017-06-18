@@ -15,6 +15,25 @@ myapp.controller("testimonialCtrl",["$scope","$http","testimonialService",functi
         //console.log(response);
     });
     
+    $scope.save_testimonial = function(){
+        var pname =  $scope.pname;
+        var pdesignation = $scope.pdesignation;
+        var ptestimonial = $scope.ptestimonial;
+        var tvisible = $scope.tvisible;
+        var save_send_data = {
+            pname:pname,
+            pdesignation:pdesignation,
+            ptestimonial:ptestimonial,
+            tvisible:tvisible
+        };
+        testimonialService.serviceTestimonial(JSON.stringify(save_send_data)).success(function(response){
+        $scope.refresh();
+        $scope.pname="";
+        $scope.pdesignation="";
+        $scope.ptestimonial="";
+        //console.log(response);
+    });
+    };
     
     $scope.delete_rec = function(id){
        var del_data = {id:id,delete_test:"delete"};

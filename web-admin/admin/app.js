@@ -10,7 +10,7 @@ myapp.config(function ($routeProvider) {
     .when('/edit_blog/:blog_id', { templateUrl: "partials/blogs.php", controller: "editblogCtrl" })
     .when('/clients_man', { templateUrl: "partials/clients.php", controller: "clientsCtrl" })
     .when('/testimonials_man', { templateUrl: "partials/testimonials.php", controller: "testimonialCtrl" })
-    .when('/conference_and_room_automation', { templateUrl: "view/pages/conferance_man.html", controller: "conferenceCtrl" })
+    .when('/products', { templateUrl: "partials/products.php", controller: "productsCtrl" })
     .when('/smart_solutions', { templateUrl: "view/pages/smart_sol_man.html", controller: "smartsolCtrl" })
     .when('/design_your_home', { templateUrl: "view/pages/design_home.html", controller: "designCtrl" })
     .when('/customer_service', { templateUrl: "view/pages/customer_service_man.html", controller: "customerCtrl" })

@@ -15,14 +15,14 @@
 							<label for="inputEmail3" class="col-sm-2 control-label">Person
 								Name</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="pname" name="pname"
+								<input type="text" class="form-control" id="pname" name="pname" ng-model="pname"
 									placeholder="Name" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputPassword3" class="col-sm-2 control-label">Designation</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="pdesignation"
+								<input type="text" class="form-control" id="pdesignation" ng-model="pdesignation"
 									name="pdesignation" placeholder="Designation" required>
 							</div>
 						</div>
@@ -30,24 +30,24 @@
 							<label class="col-sm-2 control-label">Testimonial</label>
 							<div class="col-sm-10">
 								<textarea class="form-control" placeholder="Testimonial"
-									rows="3" name="ptestimonial" id="ptestimonial" required></textarea>
+									rows="3" name="ptestimonial" id="ptestimonial" required ng-model="ptestimonial"></textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<div class="checkbox">
-									<label> <input type="checkbox" name="tvisible" value="1"
+									<label> <input type="checkbox" name="tvisible"  ng-model="tvisible"
 										checked> Visible
 									</label>
 								</div>
 
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">
+						<button type="submit" class="btn btn-primary" ng-click="save_testimonial()">
 							<i class="fa fa-save"></i> Submit
 						</button>
-						<br> <span id="testi_save" class="text-success"></span>
+						<br> 
 					</form>
 				</div>
 			</div>

@@ -30,7 +30,7 @@
                 Clients</a></li>
         <li><a href="#/testimonials_man"><i class="glyphicon glyphicon-comment"></i>
                 Testimonials</a></li>
-                <li><a href="products_man.php"><i class="glyphicon glyphicon-shopping-cart"></i>
+        <li><a href="#/products"><i class="glyphicon glyphicon-shopping-cart"></i>
                 Products</a></li>
         <li><a href="banners_man.php"><i
                     class="glyphicon glyphicon-sound-stereo"></i> Edit Banners</a></li>
