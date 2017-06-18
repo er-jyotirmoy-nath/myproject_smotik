@@ -2,6 +2,8 @@
 
 require_once 'connections/smotik_con.php';
 $bdd = smotik_db::getInstance();
+$getdata = file_get_contents("php://input");
+$json_data = json_decode($getdata,true);
 if(isset($_POST["pname"]) && isset($_POST["pdesignation"]) && isset($_POST["ptestimonial"])){
     try{
      $tvisible = $_POST["tvisible"];
@@ -21,8 +23,7 @@ if(isset($_POST["pname"]) && isset($_POST["pdesignation"]) && isset($_POST["ptes
     }
    
 }
-$getdata = file_get_contents("php://input");
-$json_data = json_decode($getdata,true);
+
 if(isset($json_data["get_data"])){
     $sql = "SELECT `id`, `person`, `designation`, `testimonial`, `visible` FROM `testimonials`";
     $testimonial_response = '';
