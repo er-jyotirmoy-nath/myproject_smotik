@@ -34,11 +34,7 @@ class blogs_class  {
                     }
                 }
                 // Check if file already exists
-                if (file_exists($target_file)) {
-                    echo "Sorry, file already exists.";
-                    die();
-                    $uploadOk = 0;
-                }
+                
                 // Check file size
                 if ($image ["blog_image"] ["size"] > 500000000) {
                     echo "Sorry, your file is too large.";

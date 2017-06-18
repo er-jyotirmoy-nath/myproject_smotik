@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connections/bdd.php';
+require_once 'connections/smotik_con.php';
 $bdd = smotik_db::getInstance();
 if(isset($_POST["pname"]) && isset($_POST["pdesignation"]) && isset($_POST["ptestimonial"])){
     try{
@@ -21,28 +21,20 @@ if(isset($_POST["pname"]) && isset($_POST["pdesignation"]) && isset($_POST["ptes
     }
    
 }
-
-if(isset($_GET["load_testimonial"])){
+$getdata = file_get_contents("php://input");
+$json_data = json_decode($getdata,true);
+if(isset($json_data["get_data"])){
     $sql = "SELECT `id`, `person`, `designation`, `testimonial`, `visible` FROM `testimonials`";
     $testimonial_response = '';
     $query = $bdd->prepare($sql);
     $query->execute();
+    echo json_encode($query->fetchAll(PDO::FETCH_ASSOC));
     
-    while($row = $query->fetch(PDO::FETCH_ASSOC)){
-        $testimonial_response .= "<tr>";
-        $testimonial_response .= "<td>".$row["id"]."</td>";
-        $testimonial_response .= "<td>".$row["person"]."</td>";
-        $testimonial_response .= "<td>".$row["designation"]."</td>";
-        $testimonial_response .= "<td>".$row["testimonial"]."</td>";
-        //$testimonial_response .= "<td>".$row["visible"]."</td>";
-        $testimonial_response .= '<td><a id="del_testimonial" data-id="'.$row["id"].'"><i class="glyphicon glyphicon-trash"></i></a></td>';
-        $testimonial_response .= "</tr>";
-    }
-    echo $testimonial_response;
 }
 
-if(isset($_POST["id"]) && isset($_POST["delete_test"])){
-    $id = $_POST["id"];
+if(isset($json_data["id"]) && isset($json_data["delete_test"])){
+    //sprint_r($_POST);
+    $id = $json_data["id"];
     $sql = "DELETE FROM testimonials where id = '$id' ";
     $query = $bdd->prepare($sql);
     $query->execute();

@@ -26,9 +26,9 @@
             </ul></li>
 
 
-        <li><a href="clients_man.php"><i class="glyphicon glyphicon-usd"></i>
+        <li><a href="#/clients_man"><i class="glyphicon glyphicon-usd"></i>
                 Clients</a></li>
-        <li><a href="testimonials.php"><i class="glyphicon glyphicon-comment"></i>
+        <li><a href="#/testimonials_man"><i class="glyphicon glyphicon-comment"></i>
                 Testimonials</a></li>
                 <li><a href="products_man.php"><i class="glyphicon glyphicon-shopping-cart"></i>
                 Products</a></li>

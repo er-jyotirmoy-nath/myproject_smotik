@@ -21,7 +21,7 @@
                 <td><img ng-src={{blog.image_url}} style="width:50px;height:50px"/></td>
                 <td>{{blog.date_blog}}</td>
                 <td><a href="#/edit_blog/{{blog.id}}" class="glyphicon glyphicon-edit"></a></td>
-                <td><button class="btn btn-primary glyphicon glyphicon-trash" ng-click="delete_blog(blog.id)" ></button></td>
+                <td><button class="btn btn-primary" ng-click="delete_blog(blog.id)" ><span class="glyphicon glyphicon-trash"></span></button></td>
               </tr>
 
             </tbody>

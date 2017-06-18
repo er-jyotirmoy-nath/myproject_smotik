@@ -13,4 +13,9 @@ if(isset($json_data["blogs_id"])){
   $param = $json_data["blogs_id"];
   $new_blog->blogDetail($param);
 }
+
+if(isset($json_data["delete_id"])){
+    $param = $json_data["delete_id"];
+    $new_blog->deleteBlog($param);
+}
  ?>

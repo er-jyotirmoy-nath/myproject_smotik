@@ -56,6 +56,8 @@
     <script src="app.js"></script>
     <script src="controller/news.js"></script>
     <script src="controller/blogs.js"></script>
+       <script src="controller/clients.js"></script>
+      <script src="controller/testimonials.js"></script>
     <!-- <script src="js/login_script.js"></script> -->
 
     <script src="js/custom.js"></script>

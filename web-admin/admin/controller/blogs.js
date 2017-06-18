@@ -23,12 +23,31 @@ $scope.save_blog = function(){
 };
 }]);
 
-myapp.controller("blogeditCtrl",["$scope","$http",function($scope,$http){
+myapp.controller("blogeditCtrl",["$scope","$http","$location",function($scope,$http,$location){
   $scope.blogs = "";
   var getdata = {get_blogs:"get"};
   $http.post("php/blogs_get.php",JSON.stringify(getdata)).success(function(response){
     $scope.blogs = response;
   });
+    
+
+    
+    $scope.delete_blog = function(blog_id_set){
+    var id = blog_id_set;
+    var getdata = {delete_id:id};
+    $http.post("php/blogs_get.php",JSON.stringify(getdata)).success(function(response){
+        
+        $scope.refresh();
+      
+    });
+  };
+    
+    $scope.refresh = function(){
+      var getdata = {get_blogs:"get"};
+  $http.post("php/blogs_get.php",JSON.stringify(getdata)).success(function(response){
+    $scope.blogs = response;
+  });  
+    };
 }]);
 
 
@@ -71,13 +90,5 @@ myapp.controller("editblogCtrl",["$scope","$http","$routeParams","$location",fun
   };
 
 
-  $scope.delete_blog = function(blog_id_set){
-    var id = blog_id_set;
-    var getdata = {delete_id:id};
-    $http.post("php/blogs_get.php",JSON.stringify(getdata)).success(function(response){
-      if(response == "1"){
-        $location.path('/blog_edit').replace();
-      }
-    });
-  };
+  
 }]);
