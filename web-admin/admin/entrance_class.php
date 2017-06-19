@@ -111,7 +111,7 @@ if (isset($_POST["entrance_text"]) && isset($_POST["entrance_about"]) && isset($
     $content = filter_input(INPUT_POST, "entrance_about");
     $new_entrance_content->saveContent($subtitle, $content, 'entrance');
 }
-if (isset($_GET["get_content"])) {
+if (isset($_POST["get_content"])) {
     $new_entrance_content->getContent('entrance');
 }
 

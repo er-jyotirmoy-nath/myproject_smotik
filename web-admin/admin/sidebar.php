@@ -1,7 +1,7 @@
 <div class="sidebar content-box" style="display: block;">
     <ul class="nav">
         <!-- Main menu -->
-        <li ><a href="#/"><i
+        <li ><a href="#/dashboard"><i
                     class="glyphicon glyphicon-home"></i> Dashboard</a></li>
     <!--<li><a href="calendar.html"><i class="glyphicon glyphicon-calendar"></i>
                     Calendar</a></li>-->
@@ -32,17 +32,16 @@
                 Testimonials</a></li>
         <li><a href="#/products"><i class="glyphicon glyphicon-shopping-cart"></i>
                 Products</a></li>
-        <li><a href="banners_man.php"><i
-                    class="glyphicon glyphicon-sound-stereo"></i> Edit Banners</a></li>
-        <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i>
-                Forms</a></li>
+        <li><a href="#/banners_man"><i
+                    class="glyphicon glyphicon-sound-stereo"></i> Banners</a></li>
+        
         <li class="submenu"><a href="#"> <i class="glyphicon glyphicon-list"></i>
                 Pages <span class="caret pull-right"></span>
             </a> <!-- Sub menu -->
             <ul>
-                <li><a href="about_us.php"><i class="glyphicon glyphicon-pencil"></i>
+                <li><a href="#/aboutus_man"><i class="glyphicon glyphicon-pencil"></i>
                         About Us</a></li>
-                <li><a href="entrance_man.php"><i class="glyphicon glyphicon-pencil"></i>
+                <li><a href="#/entrance_man"><i class="glyphicon glyphicon-pencil"></i>
                         Entrance Mgmt.</a></li>
                 <li><a href="signup.html">Signup</a></li>
             </ul></li>

@@ -18,13 +18,13 @@
                             <label for="inputEmail3" class="col-sm-2 control-label">Title on Banner</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="banner_title" name="banner_title"
-                                       placeholder="Name">
+                                       placeholder="Name" ng-model="banner_title">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Image</label>
                             <div class="col-md-10">
-                                <input type="file" class="btn btn-default" name="banner_image" id="banner_image">
+                                <input type="file" class="btn btn-default" name="banner_image" id="banner_image" file-model="banner_image">
                                 <p class="help-block" id="upload_res">
                                     URl
                                 </p>
@@ -34,13 +34,13 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="checkbox">
-                                    <label> <input type="checkbox" name="ban_show"> Visible
+                                    <label> <input type="checkbox" name="ban_show" ng-model="ban_show" > Visible
                                     </label>
                                 </div>
 
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
+                        <button type="submit" class="btn btn-primary" ng-click="save_banner()"><i class="fa fa-save"></i>
                             Submit</button>
                     </form>
                 </div>
@@ -65,7 +65,13 @@
             </thead>
             <tbody id="table_data">
 
-
+                <tr ng-repeat="banner in banners">
+                    <td>{{banner.id}}</td>
+                    <td ng-bind-html="banner.title"></td>
+                    <td>{{banner.image_url}}</td>
+                    <td><img ng-src="{{banner.image_url}}" style="width:50px;height:50px;"/></td>
+                    <td><button class="btn btn-primary" ng-click="delete_banner(banner.id)"><span class="glyphicon glyphicon-trash"></span></button></td>
+                </tr>
             </tbody>
         </table>
     </div>

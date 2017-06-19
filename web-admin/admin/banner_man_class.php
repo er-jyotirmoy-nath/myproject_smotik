@@ -1,6 +1,6 @@
 <?php
 // print_r($_POST);
-require_once 'connections/bdd.php';
+require_once 'connections/smotik_con.php';
 $bdd = smotik_db::getInstance();
 if (isset ( $_POST ["banner_title"] ) && isset ( $_FILES ["banner_image"] ["tmp_name"] )) {
 	try {
@@ -24,11 +24,7 @@ if (isset ( $_POST ["banner_title"] ) && isset ( $_FILES ["banner_image"] ["tmp_
 			}
 		}
 		// Check if file already exists
-		if (file_exists ( $target_file )) {
-			echo "Sorry, file already exists.";
-			die ();
-			$uploadOk = 0;
-		}
+		
 		// Check file size
 		if ($_FILES ["banner_image"] ["size"] > 500000000) {
 			echo "Sorry, your file is too large.";
@@ -65,21 +61,12 @@ if (isset ( $_POST ["banner_title"] ) && isset ( $_FILES ["banner_image"] ["tmp_
 	}
 }
 
-if(isset($_GET["load_data"])){
+if(isset($_POST["load_data"])){
 	$response_str = '';
 	$sql = "SELECT * FROM banner_table";
 	$query = $bdd->prepare($sql);
 	$query->execute();
-	while($row = $query->fetch(PDO::FETCH_ASSOC)){
-		
-		$response_str .= '<tr><td>'.$row["id"].'</td>';
-		$response_str .= '<td>'.$row["title"].'</td>';
-		$response_str .= '<td>'.$row["image_url"].'</td>';
-		$response_str .= '<td><img src="'.$row["image_url"].'" style="width:20px;height:20px;"/></td>';
-		$response_str .= '<td><a id="del_banner" data-id="'.$row["id"].'"><i class="glyphicon glyphicon-trash"></i></a></td></tr>';
-		
-	}
-	echo $response_str;
+	echo json_encode($query->fetchAll(PDO::FETCH_ASSOC));
 }
 
 

@@ -19,14 +19,19 @@ class account_login {
     //put your code here
     private function getToken($username, $password) {
         $bdd = smotik_db::getInstance();
-        $password = md5($password);
-        $sql = "SELECT token FROM `users` "
-                . "WHERE `username` = :username AND `password` = :password";
+        //$password = md5($password);
+        $salt1 = "%$&$";
+        $salt2 = "@&!*^";
+        $date = strtotime('now');
+        $token = md5($salt1 . sha1($username) . sha1($password) . sha1($date) . $salt2);
+        $sql = "UPDATE `users` SET `token`=:token WHERE `username` = :username AND `password` = :password";
+
         $query = $bdd->prepare($sql);
         $query->bindParam(':username', $username);
+        $query->bindParam(':token', $token);
         $query->bindParam(':password', $password);
         $query->execute();
-        return $query->fetchColumn();
+        return $token;
     }
 
     public function checkUserStatus($username, $password) {
@@ -61,7 +66,7 @@ class account_login {
         $query->execute();
         if ($query->fetchColumn() > 0) {
             if ($this->checkUserStatus($username, $password) == "1") {
-                $_SESSION["token"] = sha1($this->getToken($username, $password));
+                $_SESSION["token"] = $this->getToken($username, $password);
                 $_SESSION["username"] = $username;
                 $_SESSION["password"] = $password;
 
@@ -129,21 +134,50 @@ class account_login {
             if ($query->fetchColumn() > 0) {
                 $temp["error"] = "false";
                 $temp["status"] = "success";
+
                 echo json_encode($temp);
             } else {
                 $temp["error"] = "true";
                 $temp["status"] = "failure";
+
                 echo json_encode($temp);
             }
         } else {
             $temp["error"] = "true";
             $temp["status"] = "failure";
+
             echo json_encode($temp);
         }
     }
 
+    public function logoutUser() {
+        $temp = array();
+        //session_destroy();
+        //session_start();
+        session_unset();
+        session_destroy();
+        session_write_close();
+        $temp["error"] = "false";
+        $temp["status"] = "logout";
+        echo json_encode($temp);
+    }
+
 }
+
 $new_account_user = new account_login();
-if(isset($_POST["checklogin"]) && $_POST["checklogin"] == "check"){
+$data = json_decode(file_get_contents("php://input"), true);
+
+if (isset($data["username"]) && isset($data["password"])) {
+    $username = $data["username"];
+    $password = $data["password"];
+    //$new_account_user->userRegister($username, $password, 'admin', '1');
+    $new_account_user->userLogin($username, $password);
+}
+
+if (isset($data["check"]) && $data["check"] == "check") {
     $new_account_user->checkUserLogin();
+}
+
+if (isset($data["check"]) && $data["check"] == "logout") {
+    $new_account_user->logoutUser();
 }

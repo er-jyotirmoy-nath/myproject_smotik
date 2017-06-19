@@ -3,7 +3,7 @@ var myapp = angular.module('smotikapp', ['ngRoute','ngSanitize','ui.tinymce']);
 myapp.config(function ($routeProvider) {
 
   $routeProvider.
-    when('/', { templateUrl: "partials/main.php", controller: "mainCtrl" })
+    when('/dashboard', { templateUrl: "partials/main.php", controller: "mainCtrl" })
     .when('/news_man', { templateUrl: "partials/news.php", controller: "newsCtrl" })
     .when('/blogs_man', { templateUrl: "partials/blogs.php", controller: "blogCtrl" })
     .when('/blog_edit', { templateUrl: "partials/blog_edit.php", controller: "blogeditCtrl" })
@@ -11,29 +11,48 @@ myapp.config(function ($routeProvider) {
     .when('/clients_man', { templateUrl: "partials/clients.php", controller: "clientsCtrl" })
     .when('/testimonials_man', { templateUrl: "partials/testimonials.php", controller: "testimonialCtrl" })
     .when('/products', { templateUrl: "partials/products.php", controller: "productsCtrl" })
-    .when('/smart_solutions', { templateUrl: "view/pages/smart_sol_man.html", controller: "smartsolCtrl" })
-    .when('/design_your_home', { templateUrl: "view/pages/design_home.html", controller: "designCtrl" })
-    .when('/customer_service', { templateUrl: "view/pages/customer_service_man.html", controller: "customerCtrl" })
-    .otherwise({ redirectTo: "view/pages/error.html" });
+    .when('/banners_man', { templateUrl: "partials/banners.php", controller: "bannerCtrl" })
+    .when('/aboutus_man', { templateUrl: "partials/aboutus.php", controller: "aboutusCtrl" })
+    .when('/entrance_man', { templateUrl: "partials/entrance.php", controller: "entranceCtrl" })
+    .when('/login', { templateUrl: "partials/login.php", controller: "loginCtrl" })
+    .otherwise({ redirectTo: "/dashboard" });
 
 });
 
-myapp.controller("mainCtrl", ['$scope', function ($scope) {
-
+myapp.controller("mainCtrl", ['$scope','$location','checkuserloginService', function ($scope,$location,checkuserloginService) {
+        
 }]);
 
-myapp.directive('fileModel', ['$parse', function ($parse) {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-            var model = $parse(attrs.fileModel);
-            var modelSetter = model.assign;
+myapp.controller("indexCtrl", ['$scope','$location','checkuserloginService', function ($scope,$location,checkuserloginService) {
+        
+        $scope.logout = function(){
+            checkuserloginService.userlogout().success(function(response){
+                if(response.error == "false" && response.status == "logout"){
+                    window.location.assign('login.html');
+                }
+            });
+        };
+}]);
 
-            element.bind('change', function(){
-                scope.$apply(function(){
-                    modelSetter(scope, element[0].files[0]);
-                });
+myapp.run(function($rootScope,$location,checkuserloginService){
+    var routepermissions = ["/news_man","/blogs_man","/blog_edit","/clients_man","/testimonials_man","/products","/banners_man","/aboutus_man","/entrance_man"];
+    $rootScope.$on("$routeChangeStart",function(){
+        if(routepermissions.indexOf($location.path()) !== ''){
+            checkuserloginService.checklogin().success(function(response){
+                console.log(response);
+                if(response.error == "true" && response.status == "failure"){
+                    window.location.assign('login.html');
+                }
             });
         }
-    };
-}]);
+    });
+});
+
+
+
+
+
+
+
+
+

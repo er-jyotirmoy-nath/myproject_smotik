@@ -35,7 +35,7 @@ class content_class extends smotik_db  {
             try {
                  $sql = "UPDATE `home_content_table` SET `content`='$content', `sub_content` = '$subtitle'"
                     . "  WHERE `section` = '$section'";
-                 echo $sql;
+                 //echo $sql;
                 $query = $bdd->prepare($sql);
                 
                 

@@ -30,6 +30,6 @@ if (isset($_POST["subtitle"]) && isset($_POST["about_content"]) && $_POST["set_c
     $content = $_POST["about_content"];
     $new_about_content->saveContent($subtitle, $content, 'about_us');
 }
-if(isset($_GET["get_content"])){
+if(isset($_POST["get_content"])){
     $new_about_content->getContent('about_us');
 }
