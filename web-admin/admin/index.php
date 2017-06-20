@@ -54,7 +54,7 @@
         <div class="page-content">
             <div class="row">
                 <div class="col-md-2">
-                    <?php include_once('sidebar.php'); ?>
+                    <navigation-bar></navigation-bar>
                 </div>
                 <div class="col-md-10">
                     <ng-view></ng-view>
