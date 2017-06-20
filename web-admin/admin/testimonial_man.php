@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connections/smotik_con.php';
+require_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/connections/smotik_con.php';
 $bdd = smotik_db::getInstance();
 $getdata = file_get_contents("php://input");
 $json_data = json_decode($getdata,true);
