@@ -52,9 +52,9 @@ myapp.controller("blogeditCtrl",["$scope","$http","$location",function($scope,$h
 
 
 
-myapp.controller("editblogCtrl",["$scope","$http","$routeParams","$location",function($scope,$http,$routeParams,$location){
+myapp.controller("editblogCtrl",["$scope","$http","$stateParams","$location",function($scope,$http,$stateParams,$location){
 
-  var id = $routeParams.blog_id;
+  var id = $stateParams.blog_id;
   $scope.blog_id = id;
   var getdata = {blogs_id:id};
   $http.post("php/blogs_get.php",JSON.stringify(getdata)).success(function(response){
