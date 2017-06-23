@@ -15,6 +15,9 @@ myapp.config(function($urlRouterProvider,$stateProvider){
             .state("banners_man",{url:"/banners_man",templateUrl: "partials/banners.php", controller: "bannerCtrl"})
             .state("aboutus_man",{url:"/aboutus_man",templateUrl: "partials/aboutus.php", controller: "aboutusCtrl"})
             .state("entrance_man",{url:"/entrance_man",templateUrl: "partials/entrance.php", controller: "entranceCtrl"})
+            .state("security_man",{url:"/security_man",templateUrl: "partials/security.php",controller:"securityCtrl"})
+            .state("smart_home_man",{url:"/smart_home_man",templateUrl:"partials/smart-home_man.php",controller:"smarthomeCtrl"})
+            
             .state("login",{url:'/login',templateUrl: "partials/login.php", controller: "loginCtrl"})
     
 });
