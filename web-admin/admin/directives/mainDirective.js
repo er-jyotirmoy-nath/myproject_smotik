@@ -16,6 +16,6 @@ myapp.directive('fileModel', ['$parse', function ($parse) {
 
 myapp.directive("navigationBar",function(){
     return {
-        templateUrl: "navigation-man.html";
+        templateUrl: "partials/navigation-man.html"
     };
 });

@@ -7,7 +7,7 @@
 myapp.factory("entranceService",function($http){
     return {
         setEntrance: function(set_data){
-            return $http.post("entrance_class.php",set_data,{
+            return $http.post("php/entrance_class.php",set_data,{
                 transformRequest:angular.identity,
                 headers:{"Content-Type":undefined,"Process-Data":false}                
             });

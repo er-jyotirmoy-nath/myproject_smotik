@@ -2,7 +2,7 @@ myapp.factory("testimonialService",function($http){
     return {
         serviceTestimonial:function(send_data){
             console.log(send_data);
-            return $http.post("testimonial_man.php",send_data);
+            return $http.post("php/testimonial_man.php",send_data);
         }
     };
 });

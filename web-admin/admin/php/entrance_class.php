@@ -12,7 +12,8 @@
  * @author jyoti
  */
 session_start();
-require_once 'model/content_class.php';
+require_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/model/content_class.php';
+
 
 class entrance_class extends content_class {
 

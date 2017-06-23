@@ -10,7 +10,7 @@ $scope.save_blog = function(){
   fd.append('blogs_vis',blogvisible);
   fd.append('text_blog',blogcontent);
   fd.append('entry_type',"save");
-  $http.post("blogs_man_class.php",fd,{
+  $http.post("php/blogs_man_class.php",fd,{
     transformRequest: angular.identity,
     headers:{'Content-Type':undefined,'Process-Data':false}
   }).success(function(response){

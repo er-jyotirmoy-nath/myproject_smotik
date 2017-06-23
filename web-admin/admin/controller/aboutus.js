@@ -6,7 +6,7 @@
 myapp.factory("aboutusService", function ($http) {
     return {
         setAboutus: function (send_data) {
-            return $http.post("aboutus_class.php", send_data, {
+            return $http.post("php/aboutus_class.php", send_data, {
                 transformRequest: angular.identity,
                 headers: {"Content-Type": undefined, "Process-Data": false}
             });

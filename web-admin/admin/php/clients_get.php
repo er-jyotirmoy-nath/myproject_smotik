@@ -1,5 +1,5 @@
 <?php 
-include_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/clients_class_man.php';
+include_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/php/clients_class_man.php';
 
 $data = file_get_contents("php://input");
 

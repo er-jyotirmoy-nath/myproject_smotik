@@ -16,7 +16,7 @@ myapp.controller("clientsCtrl",["$scope","$http","$location",function($scope,$ht
       fd.append('client_name',clientname);
       fd.append('client_image',clientimage);
       fd.append('client_vis',clientvis);
-      $http.post("clients_class_man.php",fd,{
+      $http.post("php/clients_class_man.php",fd,{
         transformRequest: angular.identity,
         headers:{'Content-Type':undefined,'Process-Data':false}
       }).success(function(response){

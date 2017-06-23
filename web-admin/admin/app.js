@@ -1,4 +1,4 @@
-var myapp = angular.module('smotikapp', ['ngRoute','ngSanitize','ui.tinymce']);
+var myapp = angular.module('smotikapp', ['ui.router','ngSanitize','ui.tinymce']);
 
 myapp.config(function($urlRouterProvider,$stateProvider){
     $urlRouterProvider.otherwise('/dashboard');
@@ -8,7 +8,7 @@ myapp.config(function($urlRouterProvider,$stateProvider){
             .state("news_man",{url:"/news_man",templateUrl: "partials/news.php", controller: "newsCtrl"})
             .state("blogs_man",{url:"/blogs_man",templateUrl: "partials/blogs.php", controller: "blogCtrl"})
             .state("blogs_edit",{url:"/blog_edit",emplateUrl: "partials/blog_edit.php", controller: "blogeditCtrl"})
-            .state("blogs_edit",{url:"/edit_blog/:blog_id",templateUrl: "partials/blogs.php", controller: "editblogCtrl"})
+            .state("blogs_edit.blog",{url:"/edit_blog/:blog_id",templateUrl: "partials/blogs.php", controller: "editblogCtrl"})
             .state("clients_man",{url:"/clients_man",templateUrl: "partials/clients.php", controller: "clientsCtrl"})
             .state("testimonials_man",{url:"/testimonials_man",templateUrl: "partials/testimonials.php", controller: "testimonialCtrl"})
             .state("products",{url:"/products",templateUrl: "partials/products.php", controller: "productsCtrl"})

@@ -2,7 +2,7 @@
 myapp.factory("bannerService", function ($http) {
     return {
         serviceBanner: function (send_data) {
-            return  $http.post("banner_man_class.php", send_data, {
+            return  $http.post("php/banner_man_class.php", send_data, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
 

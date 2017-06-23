@@ -1,6 +1,7 @@
 <?php
 // print_r($_POST);
-require_once 'connections/smotik_con.php';
+session_start();
+require_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/connections/smotik_con.php';
 $bdd = smotik_db::getInstance();
 if (isset ( $_POST ["banner_title"] ) && isset ( $_FILES ["banner_image"] ["tmp_name"] )) {
 	try {

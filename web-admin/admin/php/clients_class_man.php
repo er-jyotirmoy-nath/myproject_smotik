@@ -12,7 +12,7 @@
  * @author jyoti
  */
 session_start();
-require_once 'connections/smotik_con.php';
+require_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/connections/smotik_con.php';
 class clients_class_man  {
     //put your code here
     public function clientUpload($data,$image) {

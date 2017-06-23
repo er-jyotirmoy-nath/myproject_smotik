@@ -57,7 +57,7 @@
                     <navigation-bar></navigation-bar>
                 </div>
                 <div class="col-md-10">
-                    <ng-view></ng-view>
+                    <ui-view></ui-view>
                 </div>
             </div>
         </div>
@@ -79,8 +79,8 @@
         <script type="text/javascript" src="vendors/tinymce/js/tinymce/tinymce.min.js"></script>
         <script src="js/angular.js"></script>
         <script src="js/angular/tinymce.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.17/angular-ui-router.min.js"></script>
-        <script src="js/angular-route.js"></script>
+        <script src="js/angular-ui-router.min.js"></script>
+        
         <script src="js/angular-sanitize.js"></script>
         <script src="app.js"></script>
         <script src="controller/news.js"></script>
