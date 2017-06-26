@@ -20,7 +20,7 @@
                 <td>{{blog.title}}</td>
                 <td><img ng-src={{blog.image_url}} style="width:50px;height:50px"/></td>
                 <td>{{blog.date_blog}}</td>
-                <td><a href="#/edit_blog/{{blog.id}}" class="glyphicon glyphicon-edit"></a></td>
+                <td><a ui-sref="edit_blog({blog_id:blog.id})" class="glyphicon glyphicon-edit"></a></td>
                 <td><button class="btn btn-primary" ng-click="delete_blog(blog.id)" ><span class="glyphicon glyphicon-trash"></span></button></td>
               </tr>
 

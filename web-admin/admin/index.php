@@ -86,11 +86,12 @@
         <script src="controller/news.js"></script>
         <script src="controller/blogs.js"></script>
         <script src="controller/clients.js"></script>
+        <script src="controller/community.js"></script>
         <script src="controller/testimonials.js"></script>
         <script src="controller/products.js"></script>
         <script src="controller/banners.js"></script>
         <script src="controller/aboutus.js"></script>
-        <script src="controller/entrance.js"></script>
+        <script src="controller/solutions.js"></script>
       <!-- <script src="js/login_script.js"></script> -->
         <script src="directives/mainDirective.js"></script>
         

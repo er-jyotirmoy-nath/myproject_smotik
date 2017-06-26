@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,162 +32,15 @@
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="header-wrapper">
-      <div class="container">
-        <div class="col-md-6 text-left"><strong>Address :</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div class="col-md-6">
-          <div class="collapse navbar-collapse hdr-menu" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Career</a></li>
-              <li><a href="#">Contact us</a></li>
-              <li class="head-login"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""/></a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse nvtp" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="about.html">About US</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Solutions <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="entrance-management.html">Entrance Management</a></li>
-              <li><a href="security-management.html">Safety and Security Management</a></li>
-              <li><a href="smart-home-management.html">Smart home Management</a></li>
-              <li><a href="music-zoning.html">Music Zoning</a></li>
-              <li><a href="hospitality-solutions.html">Hospitality Solutions</a></li>
-              <li><a href="conference-room-automation.html">Conference Room Automation Solutions &amp; Systems </a></li>
-              <li><a href="smart-solutions.html">Smart Solutions</a></li>
-            </ul>
-          </li>
-
-          <li><a href="design-your-home.html">Design Your Home</a></li>
-          <li><a href="demo/index.html">Digital Home Demo</a></li>
-          <li><a href="customer-service.html">Customer Service</a></li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-  </nav>
+ <?php require_once 'includes/navigation_web.php'; ?>
 
 
   <!-- Page Content -->
-  <div class="container inner-height">
-
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">About Us</h1>
-      </div>
-      <div class="col-md-6"><img class="img-responsive" src="img/about.jpg" alt=""></div>
-      <div class="col-md-6 abt-txt">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-
-  </div>
+  <?php require_once 'view/pages/aboutus_page.php';?>
 
   <!-- Footer -->
 
-  <div class="container-footer">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-sm-3">
-          <h2 class="fhdg">Useful Links</h2>
-          <div class="fmenu">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About US</a></li>
-              <li><a href="#">Our Solutions</a></li>
-              <li><a href="#">Design Your Home</a></li>
-              <li><a href="#">Digital Home Demo</a></li>
-              <li><a href="#">Customer Service</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <h2 class="fhdg">About Us</h2>
-          <div class="divider"></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Lorem ipsum dolor sit amet.</p>
-        </div>
-
-        <div class="col-sm-3">
-          <h2 class="fhdg">Get in touch</h2>
-          <p><strong>Address :</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et.</p>
-          <p><strong>Phone No. :</strong> +91-9999999999</p>
-          <p><strong>Email ID :</strong> info@smotik.com</p>
-          <p><strong>Website :</strong> www.smotik.com</p>
-        </div>
-
-        <div class="col-sm-3">
-          <h2 class="fhdg">Connect with Us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="footer_mn">
-            <ul class="icon_footer">
-              <li><a data-toggle="tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a data-toggle="tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a data-toggle="tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li class="last"><a data-toggle="tooltip" data-placement="bottom" title="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <footer>
-      <div class="col-md-6 text-left">Copyright &copy; 2017 - SMOTIK, Design &amp; Developed by <strong>ShopMate.com</strong></div>
-      <div class="col-md-6">
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#" class="last">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </div>
+  <?php require_once 'footer_module.php';?>
 
   <!-- BEGIN # MODAL LOGIN -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -351,12 +205,7 @@
   <!-- /.container -->
 
   <!-- jQuery -->
-  <script src="js/jquery.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/login.js"></script>
-
+ 
   <!-- Script to Activate the Carousel -->
   <script>
     $('.carousel').carousel({

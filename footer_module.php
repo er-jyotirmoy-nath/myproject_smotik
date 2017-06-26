@@ -80,3 +80,11 @@
         </div>
     </footer>
 </div>
+<script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/login.js"></script>
+<script src="js/angular.js"></script>
+        <script src="js/angular-sanitize.js"></script>
+        <script src="app.js"></script>

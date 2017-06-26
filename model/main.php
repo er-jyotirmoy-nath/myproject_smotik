@@ -142,36 +142,34 @@ class main  {
         $query = $bdd->prepare($sql);
         $query->execute();
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
-            $content.=' <div class="single_blog">
-                                <div class="img_holder float_left">
-                                    <img src="web-admin/admin/'.$row["image_url"].'" class="img-responsive" alt=""
-                                         width="167" height="152">
-                                </div>
+            $blog_para = substr($row["content_blog"], 0, 100);
+            $content.= '
 
-                                <div class="post float_left">
-                                    <div class="date">
-                                        <span>'.date('d', strtotime($row["date_blog"])).' <br> '.date('M', strtotime($row["date_blog"])).'
-                                        </span>
-                                    </div>
-                                    <div class="post_title">
-                                        <a href="#"><h5>'.strtoupper($row["title"]).'</h5></a>
+<div class="single_blog">
+<div class="img_holder float_left">
+<img src="web-admin/admin/'.$row["image_url"].'" class="img-responsive" alt="" width="167" height="152">
+</div>
 
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-user"
-                                                               aria-hidden="true"></i> admin</a></li>
-                                           
-                                            <li><a href="#"><i class="fa fa-heart"
-                                                               aria-hidden="true"></i> 48 Likes</a></li>
-                                        </ul>
-                                    </div>
+<div class="post float_left">
+<div class="date">
+<span>'.date('d', strtotime($row["date_blog"])).' <br> '.date('M', strtotime($row["date_blog"])).'</span>
+</div>
+<div class="post_title">
+<a href="#"><h5>'.strtoupper($row["title"]).'</h5></a>
 
-                                    <p>'.substr($row["content_blog"],0,100).'</p>
-                                    <div class="btn-pd">
-                                        <a href="#">Read more...</a>
-                                    </div>
-                                </div>
-                                <div class="clear_fix"></div>
-                            </div>';
+<ul>
+<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> admin</a></li>
+<li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 48 Likes</a></li>
+</ul>
+</div>
+
+<p>'.$row["content_blog"].'</p>
+<div class="btn-pd"><a href="#">Read more...</a></div>
+</div>
+<div class="clear_fix"></div>
+</div>
+                
+';
         }
         echo $content;
     }

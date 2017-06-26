@@ -1,0 +1,25 @@
+    <div class="row">
+                <div class="col-lg-12">
+                     <div class="panel panel-default">
+                      <div class="panel-body">
+                          <form name="sentMessage" id="contactForm" novalidate="">
+                        <div class="row" ng-repeat="product in products" ng-if="$index % 2 == 0">
+
+                            <div class="col-md-6" style="margin-top: 10px;">
+                                {{products[$index].name}}
+                            </div>
+                            <div class="col-md-6" style="margin-top: 10px;">
+                                {{products[$index+1].name}}
+                            </div>
+                            
+                        </div>
+                        <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Submit</button>
+                            </div>
+                    </form>
+                      </div>
+                    </div>
+                </div>
+            </div>

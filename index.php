@@ -1,6 +1,6 @@
 <?php require_once 'model/main.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="smotik_app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -176,12 +176,7 @@
         <!-- /.container -->
 
         <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-        <script src="https://code.angularjs.org/1.4.1/angular.min.js"></script>
-        <Script src="https://code.angularjs.org/1.4.1/angular-route.min.js"></script>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/login.js"></script>
+       
 
         <!-- Script to Activate the Carousel -->
         <script>

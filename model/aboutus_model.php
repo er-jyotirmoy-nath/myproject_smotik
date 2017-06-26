@@ -11,6 +11,7 @@
  *
  * @author jyoti
  */
+require_once 'web-admin/admin/connections/smotik_con.php';
 class aboutus_model {
     //put your code here
     public function getAboutUs() {

@@ -17,7 +17,8 @@ class blogs_class  {
             $content = $data ["text_blog"];
             $isvisible = $data ["blogs_vis"];
             $target_dir = "images/";
-            $target_file = $target_dir . basename($image ["blog_image"] ["name"]);
+            $target_file = $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/'.$target_dir . basename($image ["blog_image"] ["name"]);
+            $target_file_1 = $target_dir . basename($image ["blog_image"] ["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
             // Check if image file is a actual image or fake image
@@ -63,10 +64,10 @@ class blogs_class  {
             }
             $date_blog = date('d-m-Y', strtotime('now'));
             if ($data["entry_type"] == "save") {
-                $sql = "INSERT INTO `blogs_table`(`title`, `image_url`, `content_blog`, `visible`, `date_blog`) VALUES ('$title','$target_file','$content','$isvisible','$date_blog')";
+                $sql = "INSERT INTO `blogs_table`(`title`, `image_url`, `content_blog`, `visible`, `date_blog`) VALUES ('$title','$target_file_1','$content','$isvisible','$date_blog')";
             } else if ($data["entry_type"] == "update") {
                 $blog_id = $data["blog_id"];
-                $sql = "UPDATE `blogs_table` SET `title`='$title',`image_url`='$target_file',`content_blog`='$content',`visible`='$isvisible', `date_blog` = '$date_blog' WHERE `id` = '$blog_id'";
+                $sql = "UPDATE `blogs_table` SET `title`='$title',`image_url`='$target_file_1',`content_blog`='$content',`visible`='$isvisible', `date_blog` = '$date_blog' WHERE `id` = '$blog_id'";
             }
             $query = $bdd->prepare($sql);
             $query->execute();

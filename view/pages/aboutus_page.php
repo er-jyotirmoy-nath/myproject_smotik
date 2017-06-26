@@ -1,3 +1,4 @@
+<?php require_once 'model/aboutus_model.php'; ?>
 <div class="container inner-height">
 
 		<div class="row">

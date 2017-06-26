@@ -106,14 +106,16 @@ class entrance_class extends content_class {
 
 $new_entrance_content = new entrance_class();
 
-if (isset($_POST["entrance_text"]) && isset($_POST["entrance_about"]) && isset($_POST["set_content"])) {
+if (isset($_POST["solution_text"]) && isset($_POST["solution_content"]) && isset($_POST["section"])) {
 
-    $subtitle = filter_input(INPUT_POST, "entrance_text");
-    $content = filter_input(INPUT_POST, "entrance_about");
-    $new_entrance_content->saveContent($subtitle, $content, 'entrance');
+    $subtitle = filter_input(INPUT_POST, "solution_text");
+    $content = filter_input(INPUT_POST, "solution_content");
+    $section = filter_input(INPUT_POST, "section");
+    $new_entrance_content->saveContent($subtitle, $content,$section);
 }
-if (isset($_POST["get_content"])) {
-    $new_entrance_content->getContent('entrance');
+
+if (isset($_POST["get_content"]) && isset($_POST["section"])) {
+    $new_entrance_content->getContent($_POST["section"]);
 }
 
 if (isset($_POST["company_name"]) && isset($_POST["entrance_usecase_content"]) && isset($_POST["case_vis"])) {

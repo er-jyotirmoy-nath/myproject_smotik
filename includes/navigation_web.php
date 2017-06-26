@@ -39,11 +39,11 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="smotik.php?page=aboutus">About US</a></li>
+					<li><a href="about.php">About US</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Our Solutions <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="smotik.php?page=entrance&query=home">Entrance
+							<li><a href="entrance-management.php">Entrance
 									Management</a></li>
 							<li><a href="security-management.php">Safety and
 									Security Management</a></li>
@@ -66,24 +66,4 @@
 		</div>
 		<!-- /.container -->
 	</nav>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script>
-    $(document).ready(function() {
-	// get current URL path and assign 'active' class
-	var element = $('ul.nav a').filter(function () {
 
-            return (this.href == url && (this.href != "http://nsfaaws6.nsf.org/lab_control_v2/main.php" && this.href != "https://wrcnsf.com/lab_control_v2/main.php"));
-        }).addClass('active').parent();
-
-        while (true) {
-            if (element.is('li')) {
-                element = element.parent().addClass('in').parent();
-            } else {
-                break;
-
-            }
-        }
-
-
-})
-</script>

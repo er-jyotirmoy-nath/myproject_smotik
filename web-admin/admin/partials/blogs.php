@@ -18,7 +18,7 @@
             <img ng-src="{{img_src}}" style="width:50px;height:50px;"/>
             <br>
             <div class="checkbox">
-                <label> <input type="checkbox" name="blogs_vis" ng-model="blogs_vis" id="blogs_vis" > Visible
+                <label> <input type="checkbox" name="blogs_vis" ng-model="blogs_vis" id="blogs_vis" value="1" > Visible
                 </label>
             </div>
             <br>

@@ -1,6 +1,5 @@
-<?php require_once 'includes/main.php'; ?>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+<html lang="en" ng-app="smotik_app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +17,9 @@
         <link href="css/style.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+              type="text/css">
+        <link href="css/agency.min.css" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,29 +37,9 @@
 
 
         <!-- Page Content -->
-        <div class="inner-hght">
-            <img class="img-responsive img-fl" src="img/banner2.jpg" alt="">
-        </div>
-
-        <div class="container srv">
-            <div class="row">
-               <?php $new_web_load->getEntrancePage(); ?>
-
-                <h2 class="page-header ">Key uses cases </h2>
-
-               
-
-                <?php $new_web_load->getUseCases(); ?>
-
-
-
-            </div>
-        </div>
-
-        <p>&nbsp;</p>
-
+       <?php require_once 'view/pages/entrance-management.php';?>
         <!-- Footer -->
-
+        <?php require_once 'solution_contactus_module.php'; ?>
          <?php require_once 'footer_module.php';?>
        
 
@@ -67,12 +48,8 @@
         <!-- /.container -->
 
         <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/login.js"></script>
-
+        
+        
         <!-- Script to Activate the Carousel -->
         <script>
             $('.carousel').carousel({
