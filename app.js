@@ -13,7 +13,17 @@ smotik_app.factory('productService', ['$http', function($http){
 
 smotik_app.factory('solutioncontactService',['$http',function($http){
         return {
-                
+
+        };
+}]);
+
+smotik_app.controller('submitresponseCtrl',['$scope','$http',function($scope,$http){
+        $scope.searchParameters = {};
+        var names = [];
+        $scope.submitresponse = function(){
+                names[0] = JSON.stringify($scope.searchParameters);
+                window.localStorage.setItem('responses',JSON.stringify(names));
+                console.log(JSON.parse(JSON.parse(window.localStorage.getItem('responses'))));
         };
 }]);
 
