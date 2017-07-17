@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="smotik_app">
 
 <head>
   <meta charset="utf-8">

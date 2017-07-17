@@ -11,6 +11,7 @@
  *
  * @author jyoti
  */
+session_start();
 require_once 'web-admin/admin/connections/smotik_con.php';
 class solutions_model {
     //put your code here

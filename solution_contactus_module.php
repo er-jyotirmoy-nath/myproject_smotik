@@ -6,6 +6,6 @@
                     
                 </div>
             </div>
-           <solution-contact products="products"></solution-contact>
+           <solution-contact productlist="products" filter="filter_prod" ></solution-contact>
         </div>
 </section>

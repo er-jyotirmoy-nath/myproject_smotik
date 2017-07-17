@@ -25,7 +25,9 @@ myapp.controller("productsCtrl",["$scope","productService",function($scope,produ
         	});
 
         $scope.save_prod = function(){
+                if($scope.prod_vis.selected){$scope.prod_vis="1";}
         	var fd = new FormData();
+
         fd.append("prod_name",$scope.prod_name);
         fd.append("select_section",$scope.select_section);
         fd.append("prod_image_1",$scope.prod_image_1);
@@ -35,6 +37,10 @@ myapp.controller("productsCtrl",["$scope","productService",function($scope,produ
         fd.append("prod_image_use_2",$scope.prod_image_use_2);
         fd.append("prod_image_use_3",$scope.prod_image_use_3);
         fd.append("prod_image_use_4",$scope.prod_image_use_4);
+        fd.append("prodtype_1",$scope.prodtype_1);
+        fd.append("prodtype_2",$scope.prodtype_2);
+        fd.append("prodtype_3",$scope.prodtype_3);
+        fd.append("prodtype_4",$scope.prodtype_4);
         fd.append("tinymceModel",$scope.tinymceModel);
         fd.append("prod_vis",$scope.prod_vis);
         productService.save_products(fd).success(function(response){

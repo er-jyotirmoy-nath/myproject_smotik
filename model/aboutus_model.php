@@ -11,7 +11,8 @@
  *
  * @author jyoti
  */
-require_once 'web-admin/admin/connections/smotik_con.php';
+session_start();
+require_once $_SERVER["DOCUMENT_ROOT"].'/myproject_smotik/web-admin/admin/connections/smotik_con.php';
 class aboutus_model {
     //put your code here
     public function getAboutUs() {

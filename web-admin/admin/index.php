@@ -90,6 +90,7 @@
         <script src="controller/testimonials.js"></script>
         <script src="controller/products.js"></script>
         <script src="controller/banners.js"></script>
+        <script type="text/javascript" src="controller/contact.js"></script>
         <script src="controller/aboutus.js"></script>
         <script src="controller/solutions.js"></script>
       <!-- <script src="js/login_script.js"></script> -->

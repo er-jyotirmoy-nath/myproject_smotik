@@ -1,4 +1,5 @@
-<div ng-repeat="product in products">
+
+<div ng-repeat="product in products | filter:filter">
 <h3 class="page-header">{{product.name}}</h3>
 
                 <div class="row">
@@ -20,10 +21,10 @@
                             </div>
 
                             <!-- Controls -->
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <a class="left carousel-control" href="#carousel-example-generic" ng-non-bindable data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
                             </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <a class="right carousel-control" href="#carousel-example-generic" ng-non-bindable data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>

@@ -14,6 +14,7 @@ myapp.config(function($urlRouterProvider,$stateProvider){
             .state("testimonials_man",{url:"/testimonials_man",templateUrl: "partials/testimonials.php", controller: "testimonialCtrl"})
             .state("products",{url:"/products",templateUrl: "partials/products.php", controller: "productsCtrl"})
             .state("banners_man",{url:"/banners_man",templateUrl: "partials/banners.php", controller: "bannerCtrl"})
+            .state("contactus_man",{url:"/contactus_man",templateUrl:"partials/contactus.php",controller:"contactCtrl"})
             .state("aboutus_man",{url:"/aboutus_man",templateUrl: "partials/aboutus.php", controller: "aboutusCtrl"})
             .state("solutions_page_man",{url:"/solutions_page_man",templateUrl: "partials/solutions_man.php",controller:"solutionCtrl"})
             .state("login",{url:'/login',templateUrl: "partials/login.php", controller: "loginCtrl"})

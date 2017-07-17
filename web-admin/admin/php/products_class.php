@@ -25,16 +25,13 @@ class prodcuts_class
 		}
 	}
 	public function GetProducts()
-	{
+	{        
 		# code...
 		$bdd = smotik_db::getInstance();
 		$sql = "SELECT * FROM `products_table`";
 		$query = $bdd->prepare($sql);
-
 		$query->execute();
 		echo json_encode($query->fetchAll(PDO::FETCH_ASSOC));
-
-
 	}
 
 	public function prodUpload($data, $temp1) {
@@ -101,6 +98,10 @@ class prodcuts_class
             $content = $data ["tinymceModel"];
             $isvisible = $data ["prod_vis"];
             $section = $data["select_section"];
+            $prodtype_1   = $data["prodtype_1"];
+            $prodtype_2   = $data["prodtype_2"];
+            $prodtype_3   = $data["prodtype_3"];
+            $prodtype_4   = $data["prodtype_4"];
             $carousel_1 = $target_file[0];
             $carousel_2 = $target_file[1];
             $carousel_3 = $target_file[2];
@@ -110,8 +111,8 @@ class prodcuts_class
             $use_4 = $target_file[6];
             $date_blog = date('d-m-Y', strtotime('now'));
             $sql = "INSERT INTO `products_table`(`name`, `description`, `section`, `carousel_1`, `carousel_2`, `carousel_3`, `use_1`, `use_2`, `use_3`
-            , `use_4`, `visible`) 
-            VALUES ('$title','$content','$section','$carousel_1','$carousel_2','$carousel_3','$use_1','$use_2','$use_3','$use_4','$isvisible')";
+            , `use_4`, `visible`,`subcat_1`,`subcat_2`,`subcat_3`,`subcat_4`) 
+            VALUES ('$title','$content','$section','$carousel_1','$carousel_2','$carousel_3','$use_1','$use_2','$use_3','$use_4','$isvisible','$prodtype_1','$prodtype_2','$prodtype_3','$prodtype_4')";
             $query = $bdd->prepare($sql);
             $query->execute();
             if ($query->rowCount() > 0) {
