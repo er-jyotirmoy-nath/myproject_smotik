@@ -14,7 +14,7 @@ class smotik_db {
     
     public static function getInstance() {
          try {
-            $conn = new PDO('mysql:host=localhost;dbname=smotik_db;charset=utf8', 'smotik_admin', 'zuQBRwCHx7exXTZx');
+            $conn = new PDO('mysql:host=localhost;dbname=smotik_db;charset=utf8', 'root', '');
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             if(!isset(self::$instance)){
                 self::$instance = $conn;

@@ -10,7 +10,7 @@
 		</div>
 
 		<!-- Controls -->
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev" ng-non-bindable><span
 			class="icon-prev"></span></a> <a class="right carousel-control"
-			href="#myCarousel" data-slide="next"><span class="icon-next"></span></a>
+			href="#myCarousel" data-slide="next"><span class="icon-next" ng-non-bindable></span></a>
 	</header>

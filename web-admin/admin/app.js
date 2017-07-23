@@ -1,4 +1,4 @@
-var myapp = angular.module('smotikapp', ['ui.router','ngSanitize','ui.tinymce']);
+var myapp = angular.module('smotikapp', ['ui.router','ngSanitize','ui.tinymce', 'ui.bootstrap','bootstrapLightbox']);
 
 myapp.config(function($urlRouterProvider,$stateProvider){
     $urlRouterProvider.otherwise('/dashboard');
@@ -41,9 +41,6 @@ myapp.config(function($urlRouterProvider,$stateProvider){
 
 });*/
 
-myapp.controller("mainCtrl", ['$scope','$location','checkuserloginService', function ($scope,$location,checkuserloginService) {
-        
-}]);
 
 myapp.controller("indexCtrl", ['$scope','$location','checkuserloginService', function ($scope,$location,checkuserloginService) {
         

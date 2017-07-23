@@ -38,7 +38,7 @@
 							<div class="col-sm-offset-2 col-sm-10">
 								<div class="checkbox">
 									<label> <input type="checkbox" name="tvisible"  ng-model="tvisible"
-										checked> Visible
+										ng-true-value="'1'" ng-false-value="'0'"> Visible
 									</label>
 								</div>
 

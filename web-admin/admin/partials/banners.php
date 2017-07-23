@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="checkbox">
-                                    <label> <input type="checkbox" name="ban_show" ng-model="ban_show" > Visible
+                                    <label> <input type="checkbox" name="ban_show" ng-model="ban_show" ng-true-value="'1'" ng-false-value="'0'" > Visible
                                     </label>
                                 </div>
 

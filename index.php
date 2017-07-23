@@ -55,64 +55,7 @@
                         <h2 class="page-header bhdg">Latest News</h2>
 
                         <div class="latest_news_wrapper">
-
-                            <div class="single_news">
-                                <div class="img_holder float_left">
-                                    <img src="img/img-blog.png" class="img-responsive" alt=""
-                                         width="167" height="152">
-                                </div>
-
-                                <div class="post float_left">
-                                    <div class="post_title">
-                                        <a href="#"><h5>Lorem ipsum dolor sit amet</h5></a>
-
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-user"
-                                                               aria-hidden="true"></i> admin</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"
-                                                               aria-hidden="true"></i> 0 comment</a></li>
-                                            <li><a href="#"><i class="fa fa-heart"
-                                                               aria-hidden="true"></i> 48 Likes</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et.</p>
-                                    <div class="btn-pd">
-                                        <a href="#">Read more...</a>
-                                    </div>
-                                </div>
-                                <div class="clear_fix"></div>
-                            </div>
-
-                            <div class="single_news">
-                                <div class="img_holder float_left">
-                                    <img src="img/img-blog.png" class="img-responsive" alt=""
-                                         width="167" height="152">
-                                </div>
-
-                                <div class="post float_left">
-                                    <div class="post_title">
-                                        <a href="#"><h5>Lorem ipsum dolor sit amet</h5></a>
-
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-user"
-                                                               aria-hidden="true"></i> admin</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"
-                                                               aria-hidden="true"></i> 0 comment</a></li>
-                                            <li><a href="#"><i class="fa fa-heart"
-                                                               aria-hidden="true"></i> 48 Likes</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et.</p>
-                                    <div class="btn-pd">
-                                        <a href="#">Read more...</a>
-                                    </div>
-                                </div>
-                                <div class="clear_fix"></div>
-                            </div>
+                            <?php $new_web_load->getNews(); ?>
 
                             <a href="#" class="more_news">View More News <i
                                     class="fa fa-caret-right" aria-hidden="true"></i></a>

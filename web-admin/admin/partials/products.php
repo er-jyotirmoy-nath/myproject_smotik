@@ -166,7 +166,7 @@
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="checkbox">
                                     <label>
-                                        <input ng-value="1" name="prod_vis" ng-model="prod_vis" type="checkbox" value="1">
+                                        <input ng-true-value="'1'" ng-false-value="'0'" name="prod_vis" ng-model="prod_vis" type="checkbox" >
                                             Visible
                                         </input>
                                     </label>

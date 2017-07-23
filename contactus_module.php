@@ -8,7 +8,7 @@
                 <h3 class="section-subheading text-muted" ng-if="webcontactmsg">
                     <div class="alert alert-success alert-dismissable"> 
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
-  <strong>Success!</strong> Indicates a successful or positive action.
+  <strong>Success!</strong> Someone from our team will get in touch with you.
 </div>
                 </h3>
             </div>
@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input aria-invalid="false" class="form-control" data-validation-required-message="Please enter your name." ng-model="smotik.contactname" placeholder="Your Name *" required="" type="text">
+                                <input aria-invalid="false" class="form-control" data-validation-required-message="Please enter your name." ng-model="smotik.contactname" placeholder="Your Name *" required="required" type="text">
                                     <p class="help-block text-danger">
                                     </p>
                                 </input>
@@ -50,8 +50,8 @@
                         <div class="col-lg-12 text-center">
                             <div id="success">
                             </div>
-                            <button class="btn btn-xl" ng-click="send_web_contact(smotik)" type="submit">
-                                Send Message
+                            <button class="btn btn-xl" ng-click="send_web_contact(smotik)" ng-disabled="disablebutton" type="submit">
+                                {{sendbutton}}
                             </button>
                         </div>
                     </div>

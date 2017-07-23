@@ -9,7 +9,9 @@ if (isset ( $_POST ["banner_title"] ) && isset ( $_FILES ["banner_image"] ["tmp_
 		$isvisible = filter_input ( INPUT_POST, "ban_show" );
 		
 		$target_dir = "images/";
-		$target_file = $target_dir . basename ( $_FILES ["banner_image"] ["name"] );
+		$target_file = $_SERVER["DOCUMENT_ROOT"].
+		'/myproject_smotik/web-admin/admin/'.$target_dir . basename($image ["banner_image"] ["name"]);
+        $target_file_1 = $target_dir . basename($image ["banner_image"] ["name"]);
 		$uploadOk = 1;
 		$imageFileType = pathinfo ( $target_file, PATHINFO_EXTENSION );
 		// Check if image file is a actual image or fake image
@@ -51,7 +53,7 @@ if (isset ( $_POST ["banner_title"] ) && isset ( $_FILES ["banner_image"] ["tmp_
 				die ();
 			}
 		}
-		$sql = "INSERT INTO `banner_table`(`image_url`, `title`, `visible`) VALUES ('$target_file','$title','$isvisible')";
+		$sql = "INSERT INTO `banner_table`(`image_url`, `title`, `visible`) VALUES ('$target_file_1','$title','$isvisible')";
 		$query = $bdd->prepare ( $sql );
 		$query->execute ();
 		if ($query->rowCount () > 0) {

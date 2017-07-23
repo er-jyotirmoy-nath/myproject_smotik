@@ -2,8 +2,7 @@
 		<div class="header-wrapper">
 			<div class="container">
 				<div class="col-md-6 text-left">
-					<strong>Address :</strong> Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit.
+					<strong>Address :</strong> B50,Ground Floor,Pandav Nagar,New Delhi,110092
 				</div>
 				<div class="col-md-6">
 					<div class="collapse navbar-collapse hdr-menu" id="myNavbar">

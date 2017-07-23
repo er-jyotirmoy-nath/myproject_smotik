@@ -30,7 +30,7 @@
                                             <div class="form-group">
                                                 <div class="col-sm-offset-2 col-sm-10">
                                                     <div class="checkbox">
-                                                        <label> <input type="checkbox" name="client_vis" checked id="client_vis" value="1" ng-model="client_vis"> Visible
+                                                        <label> <input type="checkbox" name="client_vis" id="client_vis" ng-true-value="'1'" ng-false-value="'0'" ng-model="client_vis"> Visible
                                                         </label>
                                                     </div>
 

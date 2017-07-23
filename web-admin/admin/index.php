@@ -7,7 +7,7 @@
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- styles -->
         <link href="css/styles.css" rel="stylesheet">
-
+        <link rel="stylesheet" type="text/css" href="css/angular-bootstrap-lightbox.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -80,9 +80,11 @@
         <script src="js/angular.js"></script>
         <script src="js/angular/tinymce.js"></script>
         <script src="js/angular-ui-router.min.js"></script>
-        
+        <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
         <script src="js/angular-sanitize.js"></script>
+        <script type="text/javascript" src="js/angular-bootstrap-lightbox.js"></script>
         <script src="app.js"></script>
+        <script type="text/javascript" src="controller/main.js"></script>
         <script src="controller/news.js"></script>
         <script src="controller/blogs.js"></script>
         <script src="controller/clients.js"></script>

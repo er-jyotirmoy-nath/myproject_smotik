@@ -21,7 +21,10 @@ class clients_class_man  {
                 $title = $data ["client_name"];
                 $isvisible = (isset($data ["client_vis"]))?"1":"0";
 		$target_dir = "images/";
-		$target_file = $target_dir . basename ( $image ["client_image"] ["name"] );
+		$target_file = $_SERVER["DOCUMENT_ROOT"].
+		'/myproject_smotik/web-admin/admin/'.$target_dir . basename($image ["client_image"] ["name"]);
+        $target_file_1 = $target_dir . basename($image ["client_image"] ["name"]);
+		
 		$uploadOk = 1;
 		$imageFileType = pathinfo ( $target_file, PATHINFO_EXTENSION );
 		// Check if image file is a actual image or fake image
@@ -63,7 +66,7 @@ class clients_class_man  {
 				die ();
 			}
 		}
-		$sql = "INSERT INTO `clients`( `image_url`, `name`, `visible`) VALUES ('$target_file','$title','$isvisible')";
+		$sql = "INSERT INTO `clients`( `image_url`, `name`, `visible`) VALUES ('$target_file_1','$title','$isvisible')";
 		$query = $bdd->prepare ( $sql );
 		$query->execute ();
 		if ($query->rowCount () > 0) {
